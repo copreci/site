@@ -1,0 +1,37 @@
+@import "tailwindcss" theme(static);
+@import "@nuxt/ui";
+
+:root {
+    --ui-container: var(--container-7xl);
+    --ui-radius: var(--radius-3xl);
+}
+
+@theme static {
+    --font-sans: "Hanken Grotesk", "sans-serif";
+    --radius-3xl: 1.25rem;
+    --radius-4xl: 1.5875rem; 
+    --color-copreci: oklch(63.545% 0.24999 27.522);
+    --color-copreci-50: oklch(90.469% 0.04955 16.568);
+    --color-copreci-100: oklch(86.123% 0.07514 16.69);
+    --color-copreci-200: oklch(78.203% 0.12758 17.999);
+    --color-copreci-300: oklch(71.531% 0.17842 21.101);
+    --color-copreci-400: oklch(66.435% 0.22249 24.148);
+    --color-copreci-500: oklch(63.545% 0.24999 27.522);
+    --color-copreci-600: oklch(57.34% 0.23491 28.727);
+    --color-copreci-700: oklch(46.367% 0.18985 28.55);
+    --color-copreci-800: oklch(34.693% 0.14192 28.258);
+    --color-copreci-900: oklch(21.923% 0.08927 26.698);
+    --color-copreci-950: oklch(14.804% 0.06004 25.182);
+    --color-gray: oklch(86.378% 0 none);
+    --color-gray-50: oklch(100% 0 none);
+    --color-gray-100: oklch(100% 0 none);
+    --color-gray-200: oklch(100% 0 none);
+    --color-gray-300: oklch(98.809% 0 none);
+    --color-gray-400: oklch(92.494% 0 none);
+    --color-gray-500: oklch(86.378% 0 none);
+    --color-gray-600: oklch(77.627% 0 none);
+    --color-gray-700: oklch(68.622% 0 none);
+    --color-gray-800: oklch(59.31% 0 none);
+    --color-gray-900: oklch(49.616% 0 none);
+    --color-gray-950: oklch(44.59% 0 none); 
+}
