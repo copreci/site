@@ -7,7 +7,23 @@ export default defineNuxtConfig({
         '@nuxt/ui',
         '@pinia/nuxt',
         '@nuxtjs/i18n',
+        'motion-v/nuxt',
+        '@vueuse/nuxt',
+        '@storyblok/nuxt',
     ],
+    components: {
+        dirs: [
+            {
+                path: '~/components/storyblok',
+                global: true,
+            },
+        ],
+    },
+    imports: {
+        dirs: [
+            'stores',
+        ],
+    },
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
     ui: {
@@ -40,7 +56,21 @@ export default defineNuxtConfig({
     i18n: {
         detectBrowserLanguage: false,
         strategy: 'prefix_except_default',
-        locales: ['es', 'eu', 'en', 'tr', 'zh', 'cs'],
+        locales: [{
+            code: 'es',
+            name: 'Español',
+        }, {
+            code: 'eu',
+            name: 'Euskera',
+        }, {
+            code: 'en',
+            name: 'Inglés',
+        }],
         defaultLocale: 'es',
+    },
+    storyblok: {
+        accessToken: import.meta.env.NUXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+        apiOptions: { cache: { type: 'memory', clear: 'auto' } },
+        componentsDir: '~/components',
     },
 })

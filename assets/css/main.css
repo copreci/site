@@ -22,6 +22,8 @@
     --color-copreci-800: oklch(34.693% 0.14192 28.258);
     --color-copreci-900: oklch(21.923% 0.08927 26.698);
     --color-copreci-950: oklch(14.804% 0.06004 25.182);
+    --color-copreci-bg-light: #F0F0F0;
+    --color-copreci-bg-dark: #DCD7D7;
     --color-gray: oklch(86.378% 0 none);
     --color-gray-50: oklch(100% 0 none);
     --color-gray-100: oklch(100% 0 none);
@@ -33,5 +35,43 @@
     --color-gray-700: oklch(68.622% 0 none);
     --color-gray-800: oklch(59.31% 0 none);
     --color-gray-900: oklch(49.616% 0 none);
-    --color-gray-950: oklch(44.59% 0 none); 
+    --color-gray-950: oklch(44.59% 0 none);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@utility fs-13/16 {
+    @apply text-[13px] leading-[16px];
+}
+@utility fs-16/20 {
+    @apply text-[16px] leading-[20px];
+}
+@utility fs-18/20 {
+    @apply text-[18px] leading-[20px];
+}
+
+@utility fs-20/28 {
+    @apply text-[20px] leading-[28px];
+}
+
+@utility fs-22/32 {
+    @apply text-[22px] leading-[32px];
+}
+
+@utility fs-24/36 {
+    @apply text-[24px] leading-[36px];
+}
+
+@utility fs-60/60 {
+    @apply text-[60px] leading-[60px];
+}
+
+@utility fs-70/70 {
+    @apply text-[70px] leading-[70px];
+}
+
+@utility pl-screen {
+    @apply pl-[calc(((100vw-var(--ui-container))/2)+0.25rem*8)];
 }
