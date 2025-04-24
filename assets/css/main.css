@@ -48,8 +48,8 @@
 @utility fs-16/20 {
     @apply text-[16px] leading-[20px];
 }
-@utility fs-18/20 {
-    @apply text-[18px] leading-[20px];
+@utility fs-18/25 {
+    @apply text-[18px] leading-[25px];
 }
 
 @utility fs-20/28 {
@@ -62,6 +62,10 @@
 
 @utility fs-24/36 {
     @apply text-[24px] leading-[36px];
+}
+
+@utility fs-30/40 {
+    @apply text-[30px] leading-[40px];
 }
 
 @utility fs-60/60 {

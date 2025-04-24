@@ -17,13 +17,17 @@ const { data: app } = await useFetch(() => '/api/app', {
 })
 
 if (app.value) {
-    console.log('App', app.value)
+    console.log(app.value)
     state.strings = app.value.content.strings.reduce((acc: any, s: any) => {
         acc[s.key] = s.text
         return acc
     }, {})
     state.logo = app.value.content.logo
+    state.logo_white = app.value.content.logo_white
+    state.logo_mondragon = app.value.content.logo_mondragon
     state.menu = app.value.content.menu
+    state.ssmm = app.value.content.ssmm
+    state.legal = app.value.content.legal
     /* state.menu = app.value.content.app_menu
     state.legal = app.value.content.app_legal
     state.categories = app.value.content.app_categories
