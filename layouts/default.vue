@@ -6,6 +6,7 @@
             class="overflow-x-hidden"
         >
             <NuxtPage />
+            <AppContact />
         </main>
         <AppFooter />
     </div>

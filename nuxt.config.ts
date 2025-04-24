@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             storyblokAccessToken: '',
+            resendApiKey: '',
         },
     },
     compatibilityDate: '2024-11-01',
