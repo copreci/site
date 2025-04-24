@@ -14,19 +14,19 @@ const subnavOpen = ref<number | undefined>()
 </script>
 
 <template>
-    <header class="relative">
+    <header class="relative z-10">
         <div class="bg-copreci-bg-light">
             <UContainer>
                 <ul class="flex items-center justify-end gap-20">
                     <li>
                         <NuxtLink
-                            class="fs-13/25 py-1"
+                            class="fs-13/16 py-1"
                             to="/descargas"
                         >{{ useString(state, 'downloads') }}</NuxtLink>
                     </li>
                     <li>
                         <div class="relative group">
-                            <button class="fs-13/25 flex items-center gap-2 py-1">
+                            <button class="fs-13/16 flex items-center gap-2 py-1">
                                 <span>{{ useString(state, 'language') }}</span>
                                 <UIcon name="i-heroicons-plus" />
                             </button>
@@ -36,7 +36,7 @@ const subnavOpen = ref<number | undefined>()
                                     :key="loc.code"
                                 >
                                     <NuxtLink
-                                        class="block fs-13/25 bg-copreci-bg-light py-0.5 px-4 whitespace-nowrap hover:bg-copreci-bg-dark"
+                                        class="block fs-13/16 bg-copreci-bg-light py-1.5 px-4 whitespace-nowrap hover:bg-copreci-bg-dark"
                                         :to="switchLocalePath(loc.code)"
                                     >
                                         {{ loc.name }}
@@ -69,11 +69,11 @@ const subnavOpen = ref<number | undefined>()
                                 <div class="flex items-center gap-2">
                                     <NuxtLink
                                         :to="localePath(`/${item.link.cached_url}`)"
-                                        class="fs-13/25 hover:text-copreci"
+                                        class="fs-13/16 hover:text-copreci"
                                     >{{ item.label }}</NuxtLink>
                                     <button
                                         v-if="item.submenu.length"
-                                        class="fs-13/25 flex items-center cursor-pointer hover:opacity-70"
+                                        class="fs-13/16 flex items-center cursor-pointer hover:opacity-70"
                                         @click.prevent="subnavOpen = index"
                                     >
                                         <UIcon name="i-heroicons-plus" />
@@ -121,7 +121,7 @@ const subnavOpen = ref<number | undefined>()
                                         /> -->
                                         <span class="fs-18/20 font-bold group-hover:text-copreci">{{ subitem.label }}</span>
                                         <UIcon
-                                            class="fs-13/25"
+                                            class="fs-13/16"
                                             name="i-heroicons-arrow-right"
                                         />
                                     </NuxtLink>

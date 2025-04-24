@@ -12,6 +12,7 @@ const story = await useAsyncStoryblok(url.replace(/\/$/, ''),
     {
         version,
         language: locale.value,
+        resolve_relations: 'HomeActuality.highlights',
     },
 )
 </script>

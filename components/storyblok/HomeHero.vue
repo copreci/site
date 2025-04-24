@@ -84,7 +84,7 @@ watch(() => active.value, (value) => {
         class="h-[calc(100vh-105px)]"
     >
         <div class="grid grid-cols-12 h-[calc(100vh-105px)]">
-            <div class="relative col-span-7 bg-black flex">
+            <div class="relative col-span-8 bg-black flex">
                 <div
                     ref="emblaRef1"
                     class="flex-1 embla"
@@ -114,7 +114,7 @@ watch(() => active.value, (value) => {
                     </h2>
                 </div>
             </div>
-            <div class="col-span-5 flex flex-col">
+            <div class="col-span-4 flex flex-col">
                 <div class="pt-14 pb-12 bg-(--color-copreci-500)">
                     <nav class="px-9">
                         <ul class="flex items-center justify-between gap-x-4">
@@ -161,6 +161,7 @@ watch(() => active.value, (value) => {
                             <UButton
                                 :to="items[active].to"
                                 :label="items[active].button"
+                                variant="solid"
                                 trailing-icon="i-heroicons-arrow-long-right"
                             />
                         </div>

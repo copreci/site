@@ -39,8 +39,13 @@
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
+    @apply box-border;
 }
+
+body {
+    @apply text-black;
+}
+
 
 @utility fs-13/16 {
     @apply text-[13px] leading-[16px];
@@ -64,6 +69,10 @@
     @apply text-[24px] leading-[36px];
 }
 
+@utility fs-25/30 {
+    @apply text-[25px] leading-[30px];
+}
+
 @utility fs-30/40 {
     @apply text-[30px] leading-[40px];
 }
@@ -77,5 +86,92 @@
 }
 
 @utility pl-screen {
-    @apply pl-[calc(((100vw-var(--ui-container))/2)+0.25rem*8)];
+    /* @apply pl-[calc(((100vw-var(--ui-container))/2)+0.25rem*8)]; */
+    @apply pl-[calc(((100vw-var(--ui-container))/2))];
+}
+
+@utility copreci-section {
+    @apply py-20 bg-white overflow-hidden;
+}
+
+@utility copreci-section--gray {
+    @apply bg-copreci-bg-light;
+}
+
+@utility copreci-section--unpadded {
+    @apply py-0;
+}
+
+@utility copreci-grid {
+    @apply grid grid-cols-12 gap-x-12;
+}
+
+@utility copreci-grid--gap-sm {
+    @apply gap-x-6;
+}
+
+@utility copreci-grid--gap-xs {
+    @apply gap-x-4;
+}
+
+@utility copreci-column-padding {
+    @apply py-20;
+}
+
+@utility copreci-header {
+    @apply mb-16;
+}
+
+@utility copreci-text {
+    @apply flex flex-col gap-y-10;
+    h2 {
+        @apply fs-60/60 font-light text-(--color-copreci-500);
+    }
+    p {
+        @apply fs-25/30 font-light text-black whitespace-pre-wrap;
+    }
+    .copreci-text__button {
+        @apply mt-4;
+    }
+}
+
+@utility copreci_card {
+    @apply border border-copreci-bg-dark rounded-[15px] p-3.5;
+    .copreci_card__header {
+        @apply flex justify-end;
+    }
+    .copreci_card__image {
+        @apply block w-full h-[225px] mb-6 overflow-hidden;
+        img {
+            @apply w-full h-full object-cover;
+        }
+    }
+    .copreci_card__content {
+        @apply h-[256px] relative flex flex-col gap-y-4 overflow-hidden;
+        h3 {
+            @apply fs-13/16 font-medium hover:text-copreci-500;
+        }
+        .copreci_card__content-rich {
+            > * {
+                @apply fs-13/16 font-light text-black mb-4 last:mb-0;
+            }
+            ul {
+                @apply list-disc pl-4;
+            }
+            
+        }
+        .copreci-ellipsis {
+            @apply w-full absolute bottom-0 left-0 bg-copreci-bg-light fs-13/16 font-light text-black mb-4 last:mb-0;
+        }
+    }
+}
+
+@utility copreci_card--row {
+    @apply flex flex-row gap-x-6;
+    .copreci_card__image {
+        @apply w-7/12 mb-0;
+    }
+    .copreci_card__content {
+        @apply w-5/12 h-[225px] overflow-hidden;
+    }
 }
