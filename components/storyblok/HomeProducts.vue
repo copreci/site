@@ -28,7 +28,10 @@ const localePath = useLocalePath()
                     </header>
                 </div>
             </div>
-            <div class="copreci-grid copreci-grid--gap-sm">
+            <div
+                v-gsap.whenVisible.stagger.delay-300.slow.from="{ opacity: 0, y: 200 }"
+                class="copreci-grid copreci-grid--gap-sm"
+            >
                 <div
                     v-for="(item, index) in blok.products"
                     :key="item._uid"

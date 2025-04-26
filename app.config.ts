@@ -29,12 +29,17 @@ export default defineAppConfig({
                 {
                     color: 'primary',
                     variant: 'solid',
-                    class: 'text-(--color-copreci-500) bg-white hover:bg-white/90',
+                    class: 'border border-copreci-500 text-(--color-copreci-500) bg-white hover:bg-white/90',
                 },
                 {
                     color: 'primary',
                     variant: 'link',
-                    class: 'underline',
+                    class: 'underline px-0',
+                },
+                {
+                    color: 'primary',
+                    variant: 'soft',
+                    class: 'text-white border border-white hover:bg-white/10',
                 },
             ],
         },
@@ -78,6 +83,23 @@ export default defineAppConfig({
             },
             slots: {
                 base: 'bg-white',
+            },
+        },
+        tabs: {
+            slots: {
+                trigger: 'data-[state=inactive]:text-copreci-500 hover:data-[state=inactive]:not-disabled:text-copreci-500 hover:data-[state=inactive]:not-disabled:opacity-70 hover:data-[state=inactive]:not-disabled:cursor-pointer',
+            },
+            variants: {
+                variant: {
+                    pill: {
+                        list: 'bg-transparent border border-copreci-500',
+                    },
+                },
+                size: {
+                    md: {
+                        trigger: 'text-[13px]',
+                    },
+                },
             },
         },
         textarea: {

@@ -8,23 +8,18 @@ const localePath = useLocalePath()
 </script>
 
 <template>
-    <Motion
+    <div
         v-if="blok"
-        as="div"
-        :initial="{ opacity: 0, y: 100 }"
-        :while-in-view="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.5, ease: 'easeOut', delay: index ? index * 0.1 : 0 }"
     >
         <NuxtLink
             :to="localePath(`/${blok.link.cached_url}`)"
             class="block h-[230px] overflow-hidden mb-6"
         >
-            <Motion
-                as="img"
+            <img
                 :src="blok.image.filename"
                 :alt="blok.image.alt"
                 class="w-full h-full object-cover hover:opacity-95"
-            />
+            >
         </NuxtLink>
         <header>
             <h3>
@@ -40,5 +35,5 @@ const localePath = useLocalePath()
                 </NuxtLink>
             </h3>
         </header>
-    </Motion>
+    </div>
 </template>

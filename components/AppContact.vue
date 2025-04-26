@@ -94,6 +94,11 @@ const onSubmit = async () => {
 <template>
     <section class="copreci-section copreci-section--gray">
         <UContainer>
+            <div class="copreci-text copreci-header">
+                <h3>
+                    {{ useString(state, 'form_title') }}
+                </h3>
+            </div>
             <UForm
                 :state="formState"
                 :schema="schema"

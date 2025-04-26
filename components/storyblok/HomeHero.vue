@@ -87,13 +87,13 @@ watch(() => active.value, (value) => {
             <div class="relative col-span-8 bg-black flex">
                 <div
                     ref="emblaRef1"
-                    class="flex-1 embla"
+                    class="flex-1 embla h-[calc(100vh-105px)]"
                 >
                     <div class="embla__container">
                         <div
                             v-for="item in items"
                             :key="item.id"
-                            class="embla__slide"
+                            class="embla__slide h-[calc(100vh-105px)]"
                         >
                             <img
                                 :src="item.background.filename"
@@ -105,7 +105,10 @@ watch(() => active.value, (value) => {
                 </div>
                 <div class="flex flex-col gap-y-3 absolute py-9 pl-screen pr-18 w-full h-full top-0 left-0 text-white pointer-events-none">
                     <header class="flex-1 flex items-center">
-                        <h1 class="fs-60/60 font-light">
+                        <h1
+                            v-gsap.whenVisible.animateText.slow.once
+                            class="fs-60/60 font-light"
+                        >
                             {{ blok.title }}
                         </h1>
                     </header>

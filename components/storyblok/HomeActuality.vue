@@ -48,28 +48,23 @@ const highlights_right = computed(() => {
                 </div>
             </div>
             <div class="copreci-grid copreci-grid--gap-sm">
-                <div class="col-span-5 max-h-full">
-                    <Motion
+                <div
+                    v-gsap.whenVisible.stagger.delay-300.slow.from="{ opacity: 0, y: 200 }"
+                    class="col-span-5 max-h-full"
+                >
+                    <div
                         v-for="item in highlights_left"
                         :key="item.title"
-                        as="div"
                         class="copreci_card"
-                        :initial="{ opacity: 0, y: 100 }"
-                        :while-in-view="{ opacity: 1, y: 0 }"
-                        :transition="{ duration: 0.5, ease: 'easeOut' }"
                     >
                         <NuxtLink
                             :to="item.to"
                             class="copreci_card__image"
                         >
-                            <Motion
-                                as="img"
-                                :initial="{ x: 0, y: 0, scale: 1 }"
-                                :while-hover="{ x: 5, y: -5, scale: 1.05 }"
-                                :transition="{ duration: 0.2, ease: 'easeOut' }"
+                            <img
                                 :src="item.image.filename"
                                 :alt="item.image.alt"
-                            />
+                            >
                         </NuxtLink>
                         <div class="copreci_card__content">
                             <h3>
@@ -86,31 +81,26 @@ const highlights_right = computed(() => {
                                 ...
                             </div>
                         </div>
-                    </Motion>
+                    </div>
                 </div>
                 <div class="col-span-7">
-                    <div class="flex flex-col gap-y-6">
-                        <Motion
-                            v-for="(item, index) in highlights_right"
+                    <div
+                        v-gsap.whenVisible.stagger.delay-300.slow.from="{ opacity: 0, y: 200 }"
+                        class="flex flex-col gap-y-6"
+                    >
+                        <div
+                            v-for="(item) in highlights_right"
                             :key="item.title"
-                            as="div"
                             class="copreci_card copreci_card--row"
-                            :initial="{ opacity: 0, y: 100 }"
-                            :while-in-view="{ opacity: 1, y: 0 }"
-                            :transition="{ duration: 0.5, ease: 'easeOut', delay: (index + 1) * 0.1 }"
                         >
                             <NuxtLink
                                 :to="item.to"
                                 class="copreci_card__image"
                             >
-                                <Motion
-                                    as="img"
-                                    :initial="{ x: 0, y: 0, scale: 1 }"
-                                    :while-hover="{ x: 5, y: -5, scale: 1.05 }"
-                                    :transition="{ duration: 0.2, ease: 'easeOut' }"
+                                <img
                                     :src="item.image.filename"
                                     :alt="item.image.alt"
-                                />
+                                >
                             </NuxtLink>
                             <div class="copreci_card__content">
                                 <h3>
@@ -128,7 +118,7 @@ const highlights_right = computed(() => {
                                     ...
                                 </div>
                             </div>
-                        </Motion>
+                        </div>
                     </div>
                 </div>
             </div>

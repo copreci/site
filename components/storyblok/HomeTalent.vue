@@ -27,16 +27,13 @@ const localePath = useLocalePath()
                 </header>
             </div>
             <div class="col-span-6 relative">
-                <div class="w-full h-full flex items-center justify-center overflow-hidden">
-                    <Motion
-                        as="img"
-                        :initial="{ opacity: 0, scale: 1.05 }"
-                        :while-in-view="{ opacity: 1, scale: 1 }"
-                        :transition="{ duration: 0.5 }"
-                        class="h-full w-full absolute object-cover"
+                <div class="w-full h-full flex items-center justify-center overflow-hidden bg-copreci-bg-light">
+                    <img
+                        v-gsap.whenVisible.duration-1000.from="{ opacity: 0, x: '100%' }"
                         :src="blok.image.filename"
                         :alt="blok.image.alt"
-                    />
+                        class="w-full h-full object-cover origin-left"
+                    >
                 </div>
             </div>
         </div>

@@ -50,41 +50,49 @@ body {
 @utility fs-13/16 {
     @apply text-[13px] leading-[16px];
 }
+@utility fs-15/18 {
+    @apply text-[15px] leading-[18px];
+}
 @utility fs-16/20 {
     @apply text-[16px] leading-[20px];
 }
 @utility fs-18/25 {
     @apply text-[18px] leading-[25px];
 }
+@utility fs-19/26 {
+    @apply text-[19px] leading-[26px];
+}
 
 @utility fs-20/28 {
     @apply text-[20px] leading-[28px];
 }
-
 @utility fs-22/32 {
     @apply text-[22px] leading-[32px];
 }
-
 @utility fs-24/36 {
     @apply text-[24px] leading-[36px];
 }
-
 @utility fs-25/30 {
     @apply text-[25px] leading-[30px];
 }
-
+@utility fs-30/32 {
+    @apply text-[30px] leading-[32px];
+}
 @utility fs-30/40 {
     @apply text-[30px] leading-[40px];
 }
-
+@utility fs-45/60 {
+    @apply text-[45px] leading-[60px];
+}
 @utility fs-60/60 {
     @apply text-[60px] leading-[60px];
 }
-
 @utility fs-70/70 {
     @apply text-[70px] leading-[70px];
 }
-
+@utility fs-200/60 {
+    @apply text-[200px] leading-[60px];
+}
 @utility pl-screen {
     /* @apply pl-[calc(((100vw-var(--ui-container))/2)+0.25rem*8)]; */
     @apply pl-[calc(((100vw-var(--ui-container))/2))];
@@ -96,6 +104,10 @@ body {
 
 @utility copreci-section--gray {
     @apply bg-copreci-bg-light;
+}
+
+@utility copreci-section--red {
+    @apply bg-copreci-500;
 }
 
 @utility copreci-section--unpadded {
@@ -127,11 +139,39 @@ body {
     h2 {
         @apply fs-60/60 font-light text-(--color-copreci-500);
     }
+    h3 {
+        @apply fs-30/40 font-light text-(--color-copreci-500);
+    }
     p {
         @apply fs-25/30 font-light text-black whitespace-pre-wrap;
     }
     .copreci-text__button {
         @apply mt-4;
+    }
+}
+
+@utility copreci-text--sm {
+    h4 {
+        @apply fs-25/30 font-light text-black;
+    }
+    p {
+        @apply fs-18/25 font-light text-black whitespace-pre-wrap;
+    }
+}
+
+@utility copreci-text--white {
+    > h2, p, ul {
+        @apply text-white;
+    }
+}
+
+@utility copreci-page-header {
+    @apply flex flex-col gap-y-6;
+    h2 {
+        @apply fs-60/60 font-light text-(--color-copreci-500) whitespace-pre-wrap;
+    }
+    p {
+        @apply fs-20/28 font-normal text-black whitespace-pre-wrap;
     }
 }
 

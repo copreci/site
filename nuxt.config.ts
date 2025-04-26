@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         'motion-v/nuxt',
         '@vueuse/nuxt',
         '@storyblok/nuxt',
+        'v-gsap-nuxt',
     ],
     components: {
         dirs: [
