@@ -98,6 +98,11 @@ body {
     @apply pl-[calc(((100vw-var(--ui-container))/2))];
 }
 
+@utility pr-screen {
+    /* @apply pr-[calc(((100vw-var(--ui-container))/2)+0.25rem*8)]; */
+    @apply pr-[calc(((100vw-var(--ui-container))/2))];
+}
+
 @utility copreci-section {
     @apply py-20 bg-white overflow-hidden;
 }
@@ -144,6 +149,9 @@ body {
     }
     p {
         @apply fs-25/30 font-light text-black whitespace-pre-wrap;
+        a {
+           @apply underline; 
+        }
     }
     .copreci-text__button {
         @apply mt-4;
