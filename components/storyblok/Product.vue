@@ -28,15 +28,15 @@ const closeModal = () => {
     >
         <div class="relative">
             <UContainer>
-                <div class="copreci-grid items-center">
-                    <div class="col-span-5 py-20">
+                <div class="copreci-grid copreci-grid--gap-sm items-center">
+                    <div class="col-span-6 py-20">
                         <div class="copreci-text copreci-header">
                             <h2>{{ blok.title }}</h2>
                         </div>
                         <div class="copreci-text copreci-text--sm">
                             <StoryblokRichText :doc="blok.description" />
                             <template v-if="blok.columns">
-                                <div class="columns">
+                                <div class="columns columns--wrap">
                                     <div
                                         v-for="column in blok.columns"
                                         :key="column._uid"
@@ -49,13 +49,13 @@ const closeModal = () => {
                             </template>
                         </div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-6">
                         <div class="relative">
                             <img
                                 v-gsap.whenVisible.from="{ opacity: 0, y: 100 }"
                                 :src="blok.image.filename"
                                 :alt="blok.image.alt"
-                                class="mix-blend-multiply w-full"
+                                class="w-full"
                             >
                             <button
                                 v-for="feature in blok.features"
@@ -101,11 +101,6 @@ const closeModal = () => {
                             {{ active.name }}
                         </h3>
                     </header>
-                    <div>
-                        <p class="fs-25/30 font-light">
-                            {{ active.description }}
-                        </p>
-                    </div>
                     <div class="mt-12">
                         <div
                             v-if="active.image"
@@ -116,9 +111,6 @@ const closeModal = () => {
                                 :alt="active.image.alt"
                             >
                         </div>
-                        <p class="fs-15/18 font-light">
-                            {{ active.legend }}
-                        </p>
                     </div>
                 </div>
             </div>

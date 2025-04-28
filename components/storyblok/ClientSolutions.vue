@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
+defineProps({ blok: Object })
 </script>
 
 <template>
     <section
         v-if="blok"
-        class="copreci-section"
+        class="copreci-section--gray"
     >
-        <UContainer>
+        <UContainer class="py-20">
             <div class="copreci-grid">
                 <div class="col-span-12">
                     <header class="copreci-text copreci-header">
-                        <h2 v-gsap.whenVisible.animateText.slow.once>
+                        <h2>
                             {{ blok.title }}
                         </h2>
                     </header>
@@ -34,5 +34,13 @@ const props = defineProps({ blok: Object })
                 </div>
             </div>
         </UContainer>
+        <div>
+            <img
+                v-gsap.whenVisible.from="{ opacity: 0, y: 100 }"
+                :src="blok.image.filename"
+                :alt="blok.image.alt"
+                class="w-full h-full object-cover"
+            >
+        </div>
     </section>
 </template>

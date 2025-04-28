@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
+defineProps({ blok: Object })
 </script>
 
 <template>
@@ -11,21 +11,28 @@ const props = defineProps({ blok: Object })
             <div class="copreci-grid">
                 <div class="col-span-12">
                     <header class="copreci-text copreci-header">
-                        <h2 v-gsap.whenVisible.animateText.slow.once>
+                        <h2>
                             {{ blok.title }}
                         </h2>
                     </header>
                 </div>
             </div>
             <div class="copreci-grid">
-                <div class="col-span-6">
+                <div class="col-span-4">
                     <div class="copreci-text copreci-text--sm">
                         <p>
                             {{ blok.text_left }}
                         </p>
                     </div>
                 </div>
-                <div class="col-span-6">
+                <div class="col-span-4">
+                    <div class="copreci-text copreci-text--sm">
+                        <p>
+                            {{ blok.text_middle }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-span-4">
                     <div class="copreci-text copreci-text--sm">
                         <p>
                             {{ blok.text_right }}

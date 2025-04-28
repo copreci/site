@@ -89,6 +89,11 @@ article {
 @utility fs-30/40 {
     @apply text-[30px] leading-[40px];
 }
+
+@utility fs-40/50 {
+    @apply text-[40px] leading-[50px];
+}
+
 @utility fs-45/60 {
     @apply text-[45px] leading-[60px];
 }
@@ -157,7 +162,7 @@ article {
         @apply fs-60/60 font-light text-(--color-copreci-500);
     }
     h3 {
-        @apply fs-30/40 font-light text-(--color-copreci-500);
+        @apply fs-30/40 font-light text-(--color-copreci-500) whitespace-pre-wrap;
     }
     p {
         @apply fs-25/30 font-light text-black whitespace-pre-wrap;
@@ -169,7 +174,7 @@ article {
         @apply mt-4;
     }
     .columns {
-        @apply flex  space-x-6 fs-16/20;
+        @apply flex space-x-6 fs-16/20;
         h5 {
             @apply text-copreci-500 font-medium;
         }
@@ -177,9 +182,18 @@ article {
             @apply fs-16/20 font-light text-black;
         }
     }
+    .columns--wrap {
+        @apply flex flex-wrap -m-4 space-x-0;
+        > * {
+            @apply w-1/2 p-4;
+        }
+    }
 }
 
 @utility copreci-text--sm {
+    h5 {
+        @apply fs-18/25 font-medium text-copreci-500;
+    }
     h4 {
         @apply fs-25/30 font-light text-black;
     }
@@ -231,7 +245,14 @@ article {
         }
         .copreci-ellipsis {
             @apply w-full absolute bottom-0 left-0 bg-copreci-bg-light fs-13/16 font-light text-black mb-4 last:mb-0;
+
         }
+        .copreci-ellipsis--white {
+            @apply bg-white;
+        }
+    }
+    .copreci_card__content--sm {
+        @apply h-[145px];
     }
 }
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
+defineProps({ blok: Object })
 </script>
 
 <template>
@@ -9,24 +9,15 @@ const props = defineProps({ blok: Object })
     >
         <UContainer>
             <div class="copreci-grid">
-                <div class="col-span-12">
-                    <header class="copreci-text copreci-header">
-                        <h2 v-gsap.whenVisible.animateText.slow.once>
-                            {{ blok.title }}
-                        </h2>
-                    </header>
-                </div>
-            </div>
-            <div class="copreci-grid">
                 <div class="col-span-6">
-                    <div class="copreci-text copreci-text--sm">
+                    <div class="copreci-text">
                         <p>
                             {{ blok.text_left }}
                         </p>
                     </div>
                 </div>
                 <div class="col-span-6">
-                    <div class="copreci-text copreci-text--sm">
+                    <div class="copreci-text">
                         <p>
                             {{ blok.text_right }}
                         </p>

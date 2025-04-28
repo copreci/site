@@ -8,7 +8,8 @@ const highlights_left = computed(() => {
         {
             title: props.blok?.highlights[0]?.content?.title,
             image: props.blok?.highlights[0]?.content?.image,
-            description: props.blok?.highlights[0]?.content?.description,
+            text_left: props.blok?.highlights[0]?.content?.text_left,
+            text_right: props.blok?.highlights[0]?.content?.text_right,
             to: localePath(`/${props.blok?.highlights[0]?.full_slug}`),
         },
     ]
@@ -19,13 +20,15 @@ const highlights_right = computed(() => {
         {
             title: props.blok?.highlights[1]?.content?.title,
             image: props.blok?.highlights[1]?.content?.image,
-            description: props.blok?.highlights[1]?.content?.description,
+            text_left: props.blok?.highlights[1]?.content?.text_left,
+            text_right: props.blok?.highlights[1]?.content?.text_right,
             to: localePath(`/${props.blok?.highlights[1]?.full_slug}`),
         },
         {
             title: props.blok?.highlights[2]?.content?.title,
             image: props.blok?.highlights[2]?.content?.image,
-            description: props.blok?.highlights[2]?.content?.description,
+            text_left: props.blok?.highlights[2]?.content?.text_left,
+            text_right: props.blok?.highlights[2]?.content?.text_right,
             to: localePath(`/${props.blok?.highlights[2]?.full_slug}`),
         },
     ]
@@ -74,7 +77,10 @@ const highlights_right = computed(() => {
                             </h3>
                             <div class="copreci_card__content-rich">
                                 <StoryblokRichText
-                                    :doc="item.description"
+                                    :doc="item.text_left"
+                                />
+                                <StoryblokRichText
+                                    :doc="item.text_right"
                                 />
                             </div>
                             <div class="copreci-ellipsis">
@@ -110,7 +116,10 @@ const highlights_right = computed(() => {
                                 </h3>
                                 <div class="copreci_card__content-rich">
                                     <StoryblokRichText
-                                        :doc="item.description"
+                                        :doc="item.text_left"
+                                    />
+                                    <StoryblokRichText
+                                        :doc="item.text_right"
                                     />
                                 </div>
 
