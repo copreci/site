@@ -46,6 +46,10 @@ body {
     @apply text-black;
 }
 
+article {
+    @apply min-h-screen;
+}
+
 
 @utility fs-13/16 {
     @apply text-[13px] leading-[16px];
@@ -66,9 +70,13 @@ body {
 @utility fs-20/28 {
     @apply text-[20px] leading-[28px];
 }
+@utility fs-22/26 {
+    @apply text-[22px] leading-[26px];
+}
 @utility fs-22/32 {
     @apply text-[22px] leading-[32px];
 }
+
 @utility fs-24/36 {
     @apply text-[24px] leading-[36px];
 }
@@ -123,6 +131,10 @@ body {
     @apply grid grid-cols-12 gap-x-12;
 }
 
+@utility copreci-grid--gap-xl {
+    @apply gap-x-20;
+}
+
 @utility copreci-grid--gap-sm {
     @apply gap-x-6;
 }
@@ -155,6 +167,15 @@ body {
     }
     .copreci-text__button {
         @apply mt-4;
+    }
+    .columns {
+        @apply flex space-x-6 fs-16/20;
+        h5 {
+            @apply text-copreci-500 font-medium;
+        }
+        p {
+            @apply fs-16/20 font-light text-black;
+        }
     }
 }
 

@@ -15,6 +15,7 @@ defineProps({ blok: Object })
                 v-for="highlight in blok.highlights"
                 :key="highlight._uid"
                 :blok="highlight"
+                :span="blok.columns"
             />
         </div>
     </section>

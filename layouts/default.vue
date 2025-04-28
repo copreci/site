@@ -3,7 +3,6 @@
         <AppHeader />
         <main
             role="main"
-            class="overflow-x-hidden"
         >
             <NuxtPage />
             <AppContact />

@@ -1,8 +1,20 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
+const props = defineProps({
+    blok: Object,
+    span: Number,
+})
 
 const { locale } = useI18n()
 const localePath = useLocalePath()
+
+const columns = computed(() => {
+    if (props.span && props.span == 2) {
+        return 'col-span-6'
+    }
+    else {
+        return 'col-span-4'
+    }
+})
 
 const to = computed(() => {
     if (locale.value === 'es') {
@@ -17,7 +29,7 @@ const to = computed(() => {
 <template>
     <div
         v-if="blok"
-        class="flex flex-col col-span-4 border-r border-copreci-500 last:border-r-0"
+        :class="`flex flex-col ${columns} border-r border-copreci-500 last:border-r-0`"
     >
         <NuxtLink
             :to="to"

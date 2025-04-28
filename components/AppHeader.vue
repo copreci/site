@@ -14,7 +14,7 @@ const subnavOpen = ref<number | undefined>()
 </script>
 
 <template>
-    <header class="relative z-10">
+    <header class="sticky top-[-25px] z-50">
         <div class="bg-copreci-bg-light">
             <UContainer>
                 <ul class="flex items-center justify-end gap-20">
@@ -48,8 +48,7 @@ const subnavOpen = ref<number | undefined>()
                 </ul>
             </UContainer>
         </div>
-
-        <div class="py-4.5 border-b bg-white border-b-copreci z-10">
+        <div class="sticky top-0 self-start py-4.5 border-b bg-white border-b-copreci z-10 ">
             <UContainer>
                 <div class="flex items-center justify-between">
                     <NuxtLink :to="localePath('/')">

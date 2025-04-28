@@ -134,6 +134,10 @@ const alternateUrls = computed(() => {
         },
     ],
 }) */
+
+onBeforeMount(() => {
+    useGSAP().registerPlugin(scrollTo)
+})
 </script>
 
 <template>
