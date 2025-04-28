@@ -1,12 +1,23 @@
 <script setup lang="ts">
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object })
+
+const { locale } = useI18n()
 const localePath = useLocalePath()
+
+const to = computed(() => {
+    if (locale.value === 'es') {
+        return localePath(`/${props.blok?.link.cached_url}`)
+    }
+    else {
+        return localePath(props.blok?.link.cached_url)
+    }
+})
 </script>
 
 <template>
     <section
         v-if="blok"
-        class="copreci-section copreci-section--unpadded"
+        class="copreci-section copreci-section--unpadded border-b border-copreci-500"
     >
         <div class="copreci-grid">
             <div class="pl-screen col-span-6 copreci-column-padding">
@@ -16,9 +27,11 @@ const localePath = useLocalePath()
                     </h2>
                     <div class="copreci-text__button">
                         <UButton
-                            :to="localePath('/nosotros')"
-                            :label="blok.button"
+                            :to="to"
+                            :label="blok.link_label"
                             trailing-icon="i-heroicons-arrow-long-right"
+                            variant="link"
+                            size="lg"
                         />
                     </div>
                 </header>
@@ -30,12 +43,6 @@ const localePath = useLocalePath()
                         :src="blok.image.filename"
                         :alt="blok.image.alt"
                         class="w-full h-full absolute object-cover"
-                    >
-                    <img
-                        v-gsap.whenVisible.delay-1000.from="{ opacity: 0, y: 100 }"
-                        :src="blok.icon.filename"
-                        :alt="blok.icon.alt"
-                        class="z-1"
                     >
                 </div>
             </div>

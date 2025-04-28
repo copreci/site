@@ -50,6 +50,18 @@ const alternateUrls = computed(() => {
     })
 })
 
+useHead({
+    script: [
+        {
+            id: 'tc-jswidget-script',
+            type: 'application/javascript',
+            src: 'https://careers.talentclue.com/sites/static/widget/jswidget.min.js',
+            tagPosition: 'bodyClose',
+        },
+
+    ],
+})
+
 /* useHead({
     htmlAttrs: {
         lang: locale.value,
@@ -142,7 +154,7 @@ onBeforeMount(() => {
 
 <template>
     <UApp>
-        <NuxtLoadingIndicator />
+        <NuxtLoadingIndicator color="oklch(63.545% 0.24999 27.522)" />
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>

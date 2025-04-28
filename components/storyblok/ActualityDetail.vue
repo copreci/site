@@ -7,7 +7,6 @@ const api = useStoryblokApi()
 const article = ref<any>(null)
 
 const fetchStory = async () => {
-    console.log(route)
     const story = await api.getStory(route.fullPath, { language: locale.value })
     article.value = story.data.story
 }
