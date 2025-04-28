@@ -4,7 +4,7 @@ defineProps({ blok: Object })
 
 <template>
     <article
-        class="products-induction"
+        class="products-engine"
     >
         <StoryblokComponent
             v-for="item in blok?.body"

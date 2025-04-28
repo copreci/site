@@ -169,7 +169,7 @@ article {
         @apply mt-4;
     }
     .columns {
-        @apply flex space-x-6 fs-16/20;
+        @apply flex  space-x-6 fs-16/20;
         h5 {
             @apply text-copreci-500 font-medium;
         }

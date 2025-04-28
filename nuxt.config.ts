@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@storyblok/nuxt',
         'v-gsap-nuxt',
+        '@nuxt/scripts',
     ],
     components: {
         dirs: [
