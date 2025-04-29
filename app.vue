@@ -5,8 +5,6 @@ const { state } = useAppStore()
 
 const version = $preview ? 'draft' : 'published'
 
-console.log('Version', version)
-
 const { data: app } = await useFetch(() => '/api/app', {
     query: {
         slug: 'app',
@@ -17,7 +15,6 @@ const { data: app } = await useFetch(() => '/api/app', {
 })
 
 if (app.value) {
-    console.log(app.value)
     state.strings = app.value.content.strings.reduce((acc: any, s: any) => {
         acc[s.key] = s.text
         return acc
@@ -28,16 +25,6 @@ if (app.value) {
     state.menu = app.value.content.menu
     state.ssmm = app.value.content.ssmm
     state.legal = app.value.content.legal
-    /* state.menu = app.value.content.app_menu
-    state.legal = app.value.content.app_legal
-    state.categories = app.value.content.app_categories
-    state.sizes = app.value.content.app_company_sizes
-    state.tresholds = app.value.content.app_tresholds
-    state.strings = app.value.content.app_strings.reduce((acc, s) => {
-        acc[s.key] = s.text
-        return acc
-    }, {})
-    console.log('Local has changed', state.sizes) */
 }
 
 const alternateUrls = computed(() => {
@@ -50,7 +37,7 @@ const alternateUrls = computed(() => {
     })
 })
 
-useHead({
+/* useHead({
     script: [
         {
             id: 'tc-jswidget-script',
@@ -60,7 +47,7 @@ useHead({
         },
 
     ],
-})
+}) */
 
 /* useHead({
     htmlAttrs: {

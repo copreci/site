@@ -5,6 +5,7 @@ defineProps({ blok: Object })
 <template>
     <section
         v-if="blok"
+        id="talent-jobs"
         class="copreci-section"
     >
         <UContainer>

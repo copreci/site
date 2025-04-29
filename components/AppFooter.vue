@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { state } = useAppStore()
+const { locale } = useI18n()
 const localePath = useLocalePath()
 
 const items = computed(() => {
@@ -12,7 +13,7 @@ const items = computed(() => {
         {
             key: 'email',
             label: useString(state, 'footer_email_label'),
-            content: `<p class="fs-18/25 text-white"><a href="mailto:${useString(state, 'footer_email_content')}">${useString(state, 'footer_email_content')}</a></p>`,
+            content: `<p class="fs-18/25 text-white"><a href="mailto:${useString(state, 'footer_email_address')}">${useString(state, 'footer_email_address')}</a></p>`,
         },
         {
             key: 'location',
@@ -145,7 +146,7 @@ const items = computed(() => {
                             :key="item._uid"
                         >
                             <NuxtLink
-                                :to="localePath(`/${item.link.cached_url}`)"
+                                :to="item.link.linktype == 'story' ? locale != 'es' ? localePath(item.link.cached_url) : localePath(`/${item.link.cached_url}`) : item.link.url"
                                 class="text-white fs-13/16 hover:underline"
                             >
                                 {{ item.label }}

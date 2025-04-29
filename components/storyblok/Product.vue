@@ -101,7 +101,7 @@ const closeModal = () => {
                             {{ active.name }}
                         </h3>
                     </header>
-                    <div class="mt-12">
+                    <div class="mt-0">
                         <div
                             v-if="active.image"
                             class="h-[125px]"
@@ -109,6 +109,7 @@ const closeModal = () => {
                             <img
                                 :src="active.image.filename"
                                 :alt="active.image.alt"
+                                class="h-[125px]"
                             >
                         </div>
                     </div>

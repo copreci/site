@@ -21,7 +21,7 @@ const subnavOpen = ref<number | undefined>()
                     <li>
                         <NuxtLink
                             class="fs-13/16 py-1"
-                            to="/descargas"
+                            :to="locale != 'es' ? localePath('/descargas') : localePath('/descargas')"
                         >{{ useString(state, 'downloads') }}</NuxtLink>
                     </li>
                     <li>
@@ -30,7 +30,7 @@ const subnavOpen = ref<number | undefined>()
                                 <span>{{ useString(state, 'language') }}</span>
                                 <UIcon name="i-heroicons-plus" />
                             </button>
-                            <ul class="absolute top-full left-0 flex flex-col opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z.">
+                            <ul class="absolute top-full left-0 flex flex-col opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z-50">
                                 <li
                                     v-for="loc in availableLocales"
                                     :key="loc.code"
@@ -67,9 +67,11 @@ const subnavOpen = ref<number | undefined>()
                             >
                                 <div class="flex items-center gap-2">
                                     <NuxtLink
-                                        :to="localePath(`/${item.link.cached_url}`)"
+                                        :to="locale != 'es' ? localePath(item.link.cached_url) : localePath(`/${item.link.cached_url}`)"
                                         class="fs-13/16 hover:text-copreci"
-                                    >{{ item.label }}</NuxtLink>
+                                    >
+                                        {{ item.label }}
+                                    </NuxtLink>
                                     <button
                                         v-if="item.submenu.length"
                                         class="fs-13/16 flex items-center cursor-pointer hover:opacity-70"
@@ -110,14 +112,13 @@ const subnavOpen = ref<number | undefined>()
                                     :key="subitem.label"
                                 >
                                     <NuxtLink
-                                        :to="localePath(subitem.to)"
+                                        :to="locale != 'es' ? localePath(subitem.link.cached_url) : localePath(`/${subitem.link.cached_url}`)"
                                         class="flex items-center gap-4 group"
                                     >
-                                        <!-- <span
-                                            :class="`block [&>svg]:min-h-full`"
-                                            :style="{ height: `${subitem.height}px` }"
-                                            v-html="subitem.icon"
-                                        /> -->
+                                        <img
+                                            :src="subitem.icon.filename"
+                                            alt="subitem.label"
+                                        >
                                         <span class="fs-18/20 font-bold group-hover:text-copreci">{{ subitem.label }}</span>
                                         <UIcon
                                             class="fs-13/16"

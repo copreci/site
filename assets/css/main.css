@@ -163,6 +163,9 @@ article {
 
 @utility copreci-text {
     @apply flex flex-col gap-y-10;
+    h1 {
+        @apply fs-60/60 font-light text-(--color-copreci-500);
+    }
     h2 {
         @apply fs-60/60 font-light text-(--color-copreci-500);
     }
@@ -299,6 +302,3 @@ article {
     @apply fs-22/26 flex items-center text-copreci-500 gap-x-2 hover:text-copreci-500 cursor-pointer;
 }
 
-@utility copreci-download__block-toggled {
-    @apply mb-4;
-}

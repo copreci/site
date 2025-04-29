@@ -15,9 +15,9 @@ const onScrollTo = () => {
     gsap.to(window, {
         scrollTo: {
             y: '#talent-jobs',
-            offsetY: 0,
+            offsetY: 57,
         },
-        duration: 2,
+        duration: 1,
     })
 }
 

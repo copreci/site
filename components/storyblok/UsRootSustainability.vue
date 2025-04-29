@@ -17,9 +17,9 @@ const to = computed(() => {
         v-if="blok"
         class="relative w-full h-full"
     >
-        <div class="w-full h-full grid grid-cols-12 absolute top-0 left-0 z-[-1]">
+        <div class="w-full h-full copreci-grid absolute top-0 left-0 z-0">
             <div class="col-span-6">
-                <div class="relative w-full h-full">
+                <div class="relative w-[calc(100%+48px)] h-full">
                     <img
                         v-gsap.whenVisible.delay-300.from="{ opacity: 0 }"
                         :src="blok.sus_image.filename"
@@ -37,7 +37,7 @@ const to = computed(() => {
                 >
             </div>
         </div>
-        <UContainer>
+        <UContainer class="relative z-1">
             <div class="copreci-grid py-20">
                 <div class="col-span-6 pr-12">
                     <div class="copreci-text copreci-text--white">

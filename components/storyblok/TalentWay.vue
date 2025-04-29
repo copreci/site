@@ -9,7 +9,7 @@ defineProps({ blok: Object })
     >
         <UContainer>
             <div class="copreci-grid">
-                <div class="col-span-8 copreci-column-padding">
+                <div class="col-span-8">
                     <header class="copreci-text">
                         <h2>
                             {{ blok.title }}
