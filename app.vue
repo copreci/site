@@ -38,18 +38,6 @@ const alternateUrls = computed(() => {
 })
 
 /* useHead({
-    script: [
-        {
-            id: 'tc-jswidget-script',
-            type: 'application/javascript',
-            src: 'https://careers.talentclue.com/sites/static/widget/jswidget.min.js',
-            tagPosition: 'bodyClose',
-        },
-
-    ],
-}) */
-
-/* useHead({
     htmlAttrs: {
         lang: locale.value,
     },

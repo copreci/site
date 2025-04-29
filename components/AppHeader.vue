@@ -75,7 +75,7 @@ const subnavOpen = ref<number | undefined>()
                                     <button
                                         v-if="item.submenu.length"
                                         class="fs-13/16 flex items-center cursor-pointer hover:opacity-70"
-                                        @click.prevent="subnavOpen = index"
+                                        @mouseover.prevent="subnavOpen = index"
                                     >
                                         <UIcon name="i-heroicons-plus" />
                                     </button>
@@ -86,51 +86,45 @@ const subnavOpen = ref<number | undefined>()
                 </div>
             </UContainer>
         </div>
-        <AnimatePresence>
-            <Motion
+        <Transition name="slide-up">
+            <div
                 v-show="subnavOpen != undefined"
                 v-on-click-outside="() => subnavOpen = undefined"
-                :initial="{ scaleY: 0 }"
-                :animate="{ scaleY: 1 }"
-                :exit="{ scaleY: 0 }"
-                :duration="0.1"
                 class="origin-top w-screen absolute top-full left-0 bg-white"
                 @mouseleave="subnavOpen = undefined"
             >
-                <div>
-                    <template
-                        v-for="(item, index) in state.menu"
-                        :key="item.label"
+                <template
+                    v-for="(item, index) in state.menu"
+                    :key="item.label"
+                >
+                    <div
+                        v-if="item.submenu.length && subnavOpen === index"
+                        class="h-[80px] flex items-center justify-center"
                     >
-                        <div
-                            v-if="item.submenu.length && subnavOpen === index"
-                            class="h-[80px] flex items-center justify-center"
-                        >
-                            <ul class="flex items-center justify-center gap-20">
-                                <li
-                                    v-for="subitem in item.submenu"
-                                    :key="subitem.label"
+                        <ul class="flex items-center justify-center gap-20">
+                            <li
+                                v-for="subitem in item.submenu"
+                                :key="subitem.label"
+                            >
+                                <NuxtLink
+                                    :to="locale != 'es' ? localePath(subitem.link.cached_url) : localePath(`/${subitem.link.cached_url}`)"
+                                    class="flex items-center gap-4 group"
                                 >
-                                    <NuxtLink
-                                        :to="locale != 'es' ? localePath(subitem.link.cached_url) : localePath(`/${subitem.link.cached_url}`)"
-                                        class="flex items-center gap-4 group"
+                                    <img
+                                        :src="subitem.icon.filename"
+                                        alt="subitem.label"
                                     >
-                                        <img
-                                            :src="subitem.icon.filename"
-                                            alt="subitem.label"
-                                        >
-                                        <span class="fs-18/20 font-bold group-hover:text-copreci">{{ subitem.label }}</span>
-                                        <UIcon
-                                            class="fs-13/16"
-                                            name="i-heroicons-arrow-right"
-                                        />
-                                    </NuxtLink>
-                                </li>
-                            </ul>
-                        </div>
-                    </template>
-                </div>
-            </Motion>
-        </AnimatePresence>
+                                    <span class="fs-18/20 font-bold group-hover:text-copreci">{{ subitem.label }}</span>
+                                    <UIcon
+                                        class="fs-13/16"
+                                        name="i-heroicons-arrow-right"
+                                    />
+                                </NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </Transition>
     </header>
 </template>

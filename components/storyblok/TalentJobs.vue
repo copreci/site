@@ -1,5 +1,16 @@
 <script setup lang="ts">
 defineProps({ blok: Object })
+
+useHead({
+    script: [
+        {
+            id: 'tc-jswidget-script',
+            type: 'application/javascript',
+            src: 'https://careers.talentclue.com/sites/static/widget/jswidget.min.js',
+            tagPosition: 'bodyClose',
+        },
+    ],
+})
 </script>
 
 <template>

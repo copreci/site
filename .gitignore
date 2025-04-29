@@ -21,6 +21,7 @@ logs
 .resources
 localhost-key.pem
 localhost.pem
+.dev.vars
 
 # Local env files
 .env

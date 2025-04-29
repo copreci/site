@@ -37,7 +37,14 @@ export default defineNuxtConfig({
             resendApiKey: '',
         },
     },
-    compatibilityDate: '2024-11-01',
+    compatibilityDate: '2025-04-02',
+    nitro: {
+        preset: 'cloudflare_module',
+        cloudflare: {
+            deployConfig: true,
+            nodeCompat: true,
+        },
+    },
     eslint: {
         config: {
             stylistic: {
