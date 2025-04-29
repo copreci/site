@@ -276,3 +276,29 @@ article {
         @apply w-5/12 h-[225px] overflow-hidden;
     }
 }
+
+@utility copreci-download {
+    h4 {
+        @apply mb-6 pb-2 fs-22/26 border-b border-copreci-500 text-copreci-500;
+    }
+    ul {
+        @apply flex flex-col gap-y-4;
+    }
+}
+
+@utility copreci-download__col {
+    @apply flex flex-col space-y-20;
+}
+
+
+@utility copreci-download__link {
+    @apply flex items-center gap-x-2 hover:text-copreci-500;
+}
+
+@utility copreci-download__toggle {
+    @apply fs-22/26 flex items-center text-copreci-500 gap-x-2 hover:text-copreci-500 cursor-pointer;
+}
+
+@utility copreci-download__block-toggled {
+    @apply mb-4;
+}
