@@ -82,19 +82,19 @@ watch(() => active.value, (value) => {
 <template>
     <section
         v-if="blok"
-        class="h-[calc(100vh-105px)]"
+        class="h-[calc(100vh-105px)] max-[769px]:h-auto"
     >
-        <div class="grid grid-cols-12 h-[calc(100vh-105px)]">
-            <div class="relative col-span-8 bg-black flex">
+        <div class="grid grid-cols-12 h-[calc(100vh-105px)] max-[769px]:grid-cols-1 max-[769px]:h-auto">
+            <div class="relative col-span-8 bg-black flex max-[1025px]:col-span-7">
                 <div
                     ref="emblaRef1"
-                    class="flex-1 embla h-[calc(100vh-105px)]"
+                    class="flex-1 embla h-[calc(100vh-105px)] max-[769px]:h-auto max-[769px]:absolute max-[769px]:top-0 max-[769px]:left-0 max-[769px]:w-full max-[769px]:h-full"
                 >
                     <div class="embla__container">
                         <div
                             v-for="item in items"
                             :key="item.id"
-                            class="embla__slide h-[calc(100vh-105px)]"
+                            class="embla__slide h-[calc(100vh-105px)] max-[769px]:h-[50vh]"
                         >
                             <img
                                 :src="item.background.filename"
@@ -104,8 +104,8 @@ watch(() => active.value, (value) => {
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-y-3 absolute py-9 pl-screen pr-18 w-full h-full top-0 left-0 text-white pointer-events-none">
-                    <header class="flex-1 flex items-center">
+                <div class="flex flex-col gap-y-3 absolute py-9 pl-screen pr-18 w-full h-full top-0 left-0 text-white pointer-events-none max-[769px]:pr-9 max-[769px]:h-auto max-[769px]:relative max-[769px]:py-20">
+                    <header class="flex-1 flex items-center max-[769px]:mb-8">
                         <h1
                             v-gsap.whenVisible.animateText.slow.once
                             class="fs-60/60 font-light"
@@ -118,8 +118,8 @@ watch(() => active.value, (value) => {
                     </h2>
                 </div>
             </div>
-            <div class="col-span-4 flex flex-col">
-                <div class="pt-14 pb-12 bg-(--color-copreci-500)">
+            <div class="col-span-4 flex flex-col max-[1025px]:col-span-5">
+                <div class="pt-14 pb-12 bg-(--color-copreci-500) max-[1025px]:py-9">
                     <nav class="px-9">
                         <ul class="flex items-center justify-between gap-x-4">
                             <li>
@@ -148,38 +148,40 @@ watch(() => active.value, (value) => {
                             </li>
                         </ul>
                     </nav>
-                    <div class="mt-16 px-24">
-                        <div class="flex items-end h-[90px]">
+                    <div class="mt-16 px-24 max-[1281px]:px-9 max-[1281px]:mt-6 max-[769px]:flex max-[769px]:space-x-12 max-[641px]:space-x-6">
+                        <div class="flex items-end h-[90px] max-[769px]:items-start max-[641px]:h-[60px]">
                             <img
                                 :src="items[active].icon.filename"
                                 :alt="items[active].title"
                             >
                         </div>
-                        <h3 class="my-4 text-white fs-22/32 font-bold">
-                            {{ items[active].title }}
-                        </h3>
-                        <p class="whitespace-pre text-white fs-16/20">
-                            {{ items[active].description }}
-                        </p>
-                        <div class="mt-10">
-                            <UButton
-                                :to="items[active].to"
-                                :label="items[active].button"
-                                variant="solid"
-                                trailing-icon="i-heroicons-arrow-long-right"
-                            />
+                        <div>
+                            <h3 class="my-4 text-white fs-22/32 font-bold max-[769px]:mt-0">
+                                {{ items[active].title }}
+                            </h3>
+                            <p class="whitespace-pre text-white fs-16/20">
+                                {{ items[active].description }}
+                            </p>
+                            <div class="mt-10">
+                                <UButton
+                                    :to="items[active].to"
+                                    :label="items[active].button"
+                                    variant="solid"
+                                    trailing-icon="i-heroicons-arrow-long-right"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div
                     ref="emblaRef2"
-                    class="flex-1 flex flex-col overflow-hidden"
+                    class="flex-1 flex flex-col overflow-hidden "
                 >
                     <div class="flex-1 flex max-h-full">
                         <div
                             v-for="item in items"
                             :key="item.id"
-                            class="embla__slide relative max-h-full"
+                            class="embla__slide relative max-h-full max-[769px]:h-[50vw]"
                         >
                             <img
                                 :src="item.image.filename"

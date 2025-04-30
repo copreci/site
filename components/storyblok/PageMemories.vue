@@ -18,7 +18,7 @@ const props = defineProps({ blok: Object })
         <UContainer class="relative z-1">
             <div class="copreci-grid">
                 <div class="col-span-6">
-                    <header class="copreci-text copreci-header">
+                    <header class="copreci-text copreci-header max-[769px]:w-1/2">
                         <h2>{{ blok.title }}</h2>
                     </header>
                     <div class="copreci-text">

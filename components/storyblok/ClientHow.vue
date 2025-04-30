@@ -24,7 +24,7 @@ defineProps({ blok: Object })
                 <div
                     v-for="item in blok.items"
                     :key="item._uid"
-                    class="w-1/3 p-8"
+                    class="w-1/3 p-8 max-[641px]:w-1/2"
                 >
                     <h5 class="mb-4 fs-22/26 font-bold text-copreci-500 ">
                         {{ item.title }}

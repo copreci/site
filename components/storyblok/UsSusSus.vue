@@ -69,7 +69,7 @@ const to = computed(() => {
         </div>
         <div
             v-else
-            class="copreci-grid"
+            class="copreci-grid gap-y-0"
         >
             <div class="col-span-4 relative">
                 <div class="w-full h-full flex items-center justify-end bg-copreci-bg-light">
@@ -81,7 +81,7 @@ const to = computed(() => {
                     >
                 </div>
             </div>
-            <div class="pr-screen col-span-8 copreci-column-padding order-2">
+            <div class="pr-screen col-span-8 copreci-column-padding order-2 max-[769px]:pl-screen">
                 <header class="copreci-text copreci-header">
                     <h2 v-gsap.whenVisible.animateText.slow.once>
                         {{ blok.title }}

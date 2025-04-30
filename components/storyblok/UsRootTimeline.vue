@@ -18,13 +18,13 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
 <template>
     <section
         v-if="blok"
-        class="bg-copreci-bg-light pt-12 pb-20"
+        class="bg-copreci-bg-light pt-12 pb-20 max-[640px]:pt-6 max-[640px]:pb-10"
     >
         <div
             ref="emblaRef"
             class="embla"
         >
-            <div class="embla__container h-[300px]">
+            <div class="embla__container h-[300px] max-[640px]:h-[400px]">
                 <div
                     v-for="item in blok.items"
                     :key="item._uid"
@@ -32,7 +32,7 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
                 >
                     <div
                         v-if="item.component == 'UsRootTimelineDate'"
-                        class="relative w-[450px] h-full flex items-center justify-center"
+                        class="relative w-[450px] h-full flex items-center justify-center max-[640px]:w-[300px]"
                     >
                         <div class="relative w-full h-px bg-copreci-500">
                             <div class="absolute bottom-0 left-0 w-full flex flex-col items-center justify-center translate-y-[7px]">

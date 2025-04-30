@@ -9,7 +9,7 @@ defineProps({ blok: Object })
     >
         <div
             v-gsap.whenVisible.stagger.once.from="{ opacity: 0, y: 200, stagger: 0.2 }"
-            class="grid grid-cols-12"
+            class="grid grid-cols-12 max-[769px]:grid-cols-1"
         >
             <StoryblokComponent
                 v-for="highlight in blok.highlights"

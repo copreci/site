@@ -16,7 +16,7 @@ defineProps({ blok: Object })
                             <h2>{{ blok.title }}</h2>
                         </div>
                     </div>
-                    <div class="col-span-5 py-20">
+                    <div class="col-span-5 py-20 max-[769px]:col-span-12 max-[769px]:py-0">
                         <div class="copreci-text copreci-text--sm">
                             <p>{{ blok.text_1 }}</p>
                             <template v-if="blok.columns">

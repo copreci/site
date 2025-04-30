@@ -49,7 +49,7 @@ onMounted(() => {
                 </header>
             </div>
             <div class="col-span-6 relative">
-                <div class="w-full h-full flex items-center justify-center bg-copreci-bg-light">
+                <div class="w-full h-full flex items-center justify-center bg-copreci-bg-light max-[769px]:h-[50vw]">
                     <div
                         ref="emblaRef"
                         class="w-full h-full absolute top-0 left-0 overflow-hidden"

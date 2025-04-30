@@ -56,7 +56,7 @@ onMounted(async () => {
                     v-for="item in results"
                     :key="item.id"
                     v-gsap.whenVisible.from="{ opacity: 0, y: 200 }"
-                    class="col-span-4"
+                    class="col-span-4 max-[1025px]:col-span-6"
                 >
                     <div
                         class="copreci_card"

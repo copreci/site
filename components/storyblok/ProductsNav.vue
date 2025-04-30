@@ -14,7 +14,7 @@ const onScrollTo = (id: string) => {
 <template>
     <div
         v-if="blok"
-        class="sticky top-[73px] border-t border-b border-copreci-500 bg-white z-40"
+        class="sticky top-[73px] border-t border-b border-copreci-500 bg-white z-40 overflow-hidden max-[1281px]:top-[64px]"
     >
         <UContainer>
             <nav class="py-4">
@@ -22,6 +22,7 @@ const onScrollTo = (id: string) => {
                     <li
                         v-for="item in blok.items"
                         :key="item._uid"
+                        class="flex-1"
                     >
                         <button
                             class="fs-18/25 text-copreci-500 font-bold cursor-pointer hover:opacity-80"

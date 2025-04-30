@@ -7,12 +7,14 @@ const active = ref<any | undefined>(undefined)
 
 const openModal = (feature: any) => {
     active.value = feature
-    useGSAP().to(window, {
-        scrollTo: {
-            y: `#${props.blok?.id}`,
-            offsetY: 130,
-        },
-    })
+    if (window.innerWidth > 769) {
+        useGSAP().to(window, {
+            scrollTo: {
+                y: `#${props.blok?.id}`,
+                offsetY: 130,
+            },
+        })
+    }
 }
 
 const closeModal = () => {
@@ -24,7 +26,7 @@ const closeModal = () => {
     <section
         v-if="blok"
         :id="blok.id"
-        class=" bg-copreci-bg-light"
+        class=" bg-copreci-bg-light overflow-hidden"
     >
         <div class="relative">
             <UContainer>
@@ -61,7 +63,7 @@ const closeModal = () => {
                                 v-for="feature in blok.features"
                                 :key="feature._uid"
                                 :class="[
-                                    'absolute w-[35px] h-[35px] rounded-full border-2 border-copreci-500 flex items-center justify-center cursor-pointer',
+                                    'absolute w-[35px] h-[35px] rounded-full border-2 border-copreci-500 flex items-center justify-center cursor-pointer max-[769px]:scale-75',
                                 ]"
                                 :style="{
                                     top: `${feature.position_top}%`,
@@ -82,8 +84,8 @@ const closeModal = () => {
             </UContainer>
             <div
                 :class="[
-                    'w-[50vw] h-full absolute top-0 left-0 bg-white border-r border-r-copreci-500 transition-all duration-500 pl-screen flex items-center',
-                    active ? 'translate-x-0' : '-translate-x-full',
+                    'w-[50vw] h-full absolute top-0 left-0 bg-white border-r border-copreci-500 transition-all duration-500 pl-screen flex items-center max-[769px]:w-screen max-[769px]:top-auto max-[769px]:bottom-0 max-[769px]:h-auto max-[769px]:border-t max-[769px]:border-r-0 max-[769px]:py-12',
+                    active ? 'translate-x-0 opacity-100 pointer-events-auto max-[769px]:translate-x-0 max-[769px]:translate-y-0' : '-translate-x-full opacity-0 pointer-events-none max-[769px]:-translate-x-0 max-[769px]:translate-y-full',
                 ]"
             >
                 <button

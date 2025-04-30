@@ -28,7 +28,7 @@ async function play() {
             </div>
             <div
                 v-if="blok.features"
-                class="mb-20 grid grid-cols-12 gap-12"
+                class="mb-20 grid grid-cols-12 gap-12 max-[769px]:grid-cols-1 max-[769px]:gap-y-6"
             >
                 <div
                     v-for="feature in blok.features"

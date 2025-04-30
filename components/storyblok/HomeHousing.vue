@@ -24,7 +24,7 @@ const localePath = useLocalePath()
                 </header>
             </div>
             <div class="col-span-6 relative">
-                <div class="w-full h-full flex items-center justify-center bg-copreci-bg-light">
+                <div class="w-full h-full flex items-center justify-center bg-copreci-bg-light max-[769px]:h-[50vw]">
                     <img
                         v-gsap.whenVisible.from="{ opacity: 0, x: '100%' }"
                         :src="blok.image.filename"

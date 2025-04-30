@@ -67,63 +67,63 @@ watch(() => active.value, () => {
                     :items="options"
                 />
             </nav>
-            <div class="mt-20">
-                <div class="relative">
-                    <img
-                        v-gsap.whenVisible.delay-1000.from="{ opacity: 0, y: 100 }"
-                        :src="blok.map.filename"
-                        :alt="blok.map.alt"
-                    >
-                    <template v-if="active == 0">
-                        <div
-                            v-for="plant in plants"
-                            :key="plant.key"
-                            class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer"
-                            :style="{
-                                top: `${plant.position_top}%`,
-                                left: `${plant.position_left}%`,
-                            }"
-                            @click="onSelectCountry(plant)"
-                        >
-                            <span class="w-[10px] h-[10px] rounded-full bg-black" />
-                        </div>
-                    </template>
-                    <template v-if="active == 1">
-                        <div
-                            v-for="delegation in delegations"
-                            :key="delegation.key"
-                            class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer"
-                            :style="{
-                                top: `${delegation.position_top}%`,
-                                left: `${delegation.position_left}%`,
-                            }"
-                            @click="onSelectCountry(delegation)"
-                        >
-                            <span class="w-[10px] h-[10px] rounded-full bg-black" />
-                        </div>
-                    </template>
-                    <template v-if="active == 2">
-                        <div
-                            v-for="agent in agents"
-                            :key="agent.key"
-                            class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer"
-                            :style="{
-                                top: `${agent.position_top}%`,
-                                left: `${agent.position_left}%`,
-                            }"
-                            @click="onSelectCountry(agent)"
-                        >
-                            <span class="w-[10px] h-[10px] rounded-full bg-black" />
-                        </div>
-                    </template>
-                </div>
-            </div>
         </UContainer>
+        <div class="mt-20 flex justify-center">
+            <div class="relative">
+                <img
+                    v-gsap.whenVisible.delay-1000.from="{ opacity: 0, y: 100 }"
+                    :src="blok.map.filename"
+                    :alt="blok.map.alt"
+                >
+                <template v-if="active == 0">
+                    <div
+                        v-for="plant in plants"
+                        :key="plant.key"
+                        class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer max-[769px]:scale-75"
+                        :style="{
+                            top: `${plant.position_top}%`,
+                            left: `${plant.position_left}%`,
+                        }"
+                        @click="onSelectCountry(plant)"
+                    >
+                        <span class="w-[10px] h-[10px] rounded-full bg-black" />
+                    </div>
+                </template>
+                <template v-if="active == 1">
+                    <div
+                        v-for="delegation in delegations"
+                        :key="delegation.key"
+                        class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer"
+                        :style="{
+                            top: `${delegation.position_top}%`,
+                            left: `${delegation.position_left}%`,
+                        }"
+                        @click="onSelectCountry(delegation)"
+                    >
+                        <span class="w-[10px] h-[10px] rounded-full bg-black" />
+                    </div>
+                </template>
+                <template v-if="active == 2">
+                    <div
+                        v-for="agent in agents"
+                        :key="agent.key"
+                        class="absolute w-[17px] h-[17px] rounded-full border border-black flex items-center justify-center cursor-pointer"
+                        :style="{
+                            top: `${agent.position_top}%`,
+                            left: `${agent.position_left}%`,
+                        }"
+                        @click="onSelectCountry(agent)"
+                    >
+                        <span class="w-[10px] h-[10px] rounded-full bg-black" />
+                    </div>
+                </template>
+            </div>
+        </div>
         <div
             v-if="country"
-            class="absolute w-full left-0 bottom-0 z-1"
+            class="absolute w-full bottom-0 left-0 z-1 max-[641px]:fixed max-[641px]:h-[calc(100vh-67px)]"
         >
-            <div class="bg-white">
+            <div class="bg-white h-full">
                 <header class="border-t border-b border-copreci-500 py-4">
                     <UContainer>
                         <div class="flex items-center justify-between">
@@ -141,18 +141,18 @@ watch(() => active.value, () => {
                 </header>
                 <div v-if="country.locations">
                     <UContainer>
-                        <div class="flex flex-wrap -mx-6">
+                        <div class="flex flex-wrap -m-6 max-[1024px]:-mx-3.5">
                             <div
                                 v-for="location in country.locations"
                                 :key="location.key"
-                                class="w-1/2 px-6 py-10 border-r border-copreci-500 last:border-r-0"
+                                class="w-1/2 p-6 py-10 border-r border-copreci-500 last:border-r-0 max-[1025px]:w-full max-[1025px]:border-b max-[1025px]:border-r-0"
                             >
                                 <header class="mb-4">
                                     <h4 class="fs-15/18 font-medium text-copreci-500">
                                         {{ location.name }}
                                     </h4>
                                 </header>
-                                <div class="grid grid-cols-12 gap-x-9">
+                                <div class="grid grid-cols-12 gap-x-9 max-[641px]:grid-cols-1 max-[641px]:gap-x-0 max-[641px]:gap-y-2.5">
                                     <div
                                         v-if="location.address"
                                         class="col-span-4"

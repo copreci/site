@@ -21,7 +21,7 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
                     {{ blok.title }}
                 </h2>
             </header>
-            <div class="flex itesms-center space-x-20">
+            <div class="flex space-x-20 max-[769px]:space-x-0">
                 <div class="mt-10">
                     <button
                         class="cursor-pointer hover:opacity-80"
@@ -33,7 +33,7 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
                         />
                     </button>
                 </div>
-                <div class="flex-1">
+                <div class="flex-1 max-[769px]:flex-initial max-w-[calc(100vw-120px)]">
                     <div
                         ref="emblaRef"
                         class="w-full overflow-hidden"
@@ -47,16 +47,16 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
                                 <p class="fs-25/30 text-center">
                                     {{ item.text }}
                                 </p>
-                                <div class="mt-16 flex items-center space-x-6 justify-center">
+                                <div class="mt-16 flex flex-wrap items-center -m-2.5 justify-center max-[769px]:mt-6">
                                     <div
                                         v-for="person in item.people"
                                         :key="person._uid"
-                                        class="flex flex-col items-center"
+                                        class="flex flex-col items-center p-2.5 max-[769px]:hidden max-[769px]:first:flex"
                                     >
                                         <img
                                             :src="person.portrait.filename"
                                             :alt="person.portrait.alt"
-                                            class="w-[120px] mb-2.5 text-center"
+                                            class="w-[120px] mb-2.5 text-center max-[1025px]:w-[80px]"
                                         >
                                         <p class="fs-15/20 font-medium">
                                             {{ person.name }}

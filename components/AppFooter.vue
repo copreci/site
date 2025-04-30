@@ -43,8 +43,8 @@ const items = computed(() => {
 <template>
     <footer class="bg-black pt-20 pb-12">
         <UContainer>
-            <div class="grid grid-cols-12 border-b border-white pb-12">
-                <div class="col-span-4">
+            <div class="grid grid-cols-12 border-b border-white pb-12 max-[769px]:grid-cols-1 max-[769px]:gap-y-6">
+                <div class="col-span-4 max-[769px]:col-span-12">
                     <NuxtLink :to="localePath('/')">
                         <img
                             :src="state.logo_white.filename"
@@ -58,13 +58,13 @@ const items = computed(() => {
                     </p>
                 </div>
             </div>
-            <div class="grid grid-cols-12 mt-12 gap-x-6 gap-y-12 border-b border-white pb-12">
+            <div class="grid grid-cols-12 mt-12 gap-x-6 gap-y-12 border-b border-white pb-12 max-[769px]:grid-cols-1 max-[769px]:gap-y-6">
                 <div
                     v-for="item in items"
                     :key="item.label"
                     class="col-span-4"
                 >
-                    <h6 class="mb-4 fs-13/16 text-(--color-copreci-bg-light)/50">
+                    <h6 class="mb-4 fs-13/16 text-(--color-copreci-bg-light)/50 max-[769px]:mb-0">
                         {{ item.label }}
                     </h6>
                     <div
@@ -73,7 +73,7 @@ const items = computed(() => {
                     />
                     <div
                         v-if="item.key === 'location'"
-                        class="mt-4"
+                        class="mt-4 max-[769px]:mt-0"
                     >
                         <NuxtLink
                             to=""
@@ -90,7 +90,7 @@ const items = computed(() => {
                     </div>
                     <div
                         v-if="item.key === 'projects'"
-                        class="mt-4"
+                        class="mt-4 max-[769px]:mt-0"
                     >
                         <p class="fs-18/25 text-white">
                             <NuxtLink to="/">
@@ -100,7 +100,7 @@ const items = computed(() => {
                     </div>
                     <div
                         v-if="item.key === 'talent'"
-                        class="mt-4"
+                        class="mt-4 max-[769px]:mt-0"
                     >
                         <p class="fs-18/25 text-white">
                             <NuxtLink :to="localePath('/talento')">
@@ -110,7 +110,7 @@ const items = computed(() => {
                     </div>
                     <div
                         v-if="item.key === 'mondragon'"
-                        class="mt-4"
+                        class="mt-4 max-[769px]:mt-2"
                     >
                         <img
                             :src="state.logo_mondragon.filename"
@@ -119,8 +119,8 @@ const items = computed(() => {
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-12 mt-12">
-                <div class="col-span-4">
+            <div class="grid grid-cols-12 mt-12 max-[769px]:gap-y-6">
+                <div class="col-span-4 max-[769px]:col-span-12">
                     <ul class="flex gap-x-4">
                         <li
                             v-for="item in state.ssmm"
@@ -139,8 +139,8 @@ const items = computed(() => {
                         </li>
                     </ul>
                 </div>
-                <div class="col-span-8">
-                    <ul class="flex items-center justify-between gap-x-4">
+                <div class="col-span-8 max-[769px]:col-span-12">
+                    <ul class="flex items-center justify-between gap-x-4 max-[769px]:flex-col max-[769px]:gap-y-1 max-[769px]:items-start">
                         <li
                             v-for="item in state.legal"
                             :key="item._uid"
@@ -152,7 +152,7 @@ const items = computed(() => {
                                 {{ item.label }}
                             </NuxtLink>
                         </li>
-                        <li>
+                        <li class="max-[769px]:mt-2">
                             <p class="text-white fs-13/16">
                                 Copyright {{ new Date().getFullYear() }} Copreci
                             </p>

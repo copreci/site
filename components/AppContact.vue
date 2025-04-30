@@ -105,7 +105,7 @@ const onSubmit = async () => {
                 @submit="onSubmit"
             >
                 <div class="grid grid-cols-12 gap-x-6 gap-y-6 items-center">
-                    <div class="col-span-4">
+                    <div class="col-span-4 max-[769px]:col-span-12">
                         <UFormField
                             name="name"
                         >
@@ -116,7 +116,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-4 max-[769px]:col-span-12">
                         <UFormField
                             name="surname"
                         >
@@ -127,7 +127,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-4 max-[769px]:col-span-12">
                         <UFormField
                             name="email"
                         >
@@ -138,7 +138,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-6">
+                    <div class="col-span-6 max-[769px]:col-span-12">
                         <UFormField
                             name="phone"
                         >
@@ -149,7 +149,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-6">
+                    <div class="col-span-6 max-[769px]:col-span-12">
                         <UFormField
                             name="company"
                         >
@@ -160,7 +160,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-6">
+                    <div class="col-span-6 max-[769px]:col-span-12">
                         <UFormField
                             name="country"
                         >
@@ -171,7 +171,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-6">
+                    <div class="col-span-6 max-[769px]:col-span-12">
                         <UFormField
                             name="region"
                         >
@@ -182,7 +182,7 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-4 max-[769px]:col-span-6 max-[641px]:col-span-12">
                         <div class="flex items-center gap-x-6">
                             <label class="text-sm font-medium">{{ useString(state, 'form_customer') }}</label>
                             <URadioGroup
@@ -192,7 +192,7 @@ const onSubmit = async () => {
                             />
                         </div>
                     </div>
-                    <div class="col-span-4">
+                    <div class="col-span-4 max-[769px]:col-span-6 max-[641px]:col-span-12">
                         <div class="flex items-center gap-x-6">
                             <label class="text-sm font-medium">{{ useString(state, 'form_supplier') }}</label>
                             <URadioGroup
@@ -202,8 +202,8 @@ const onSubmit = async () => {
                             />
                         </div>
                     </div>
-                    <div class="col-span-4" />
-                    <div class="col-span-12">
+                    <div class="col-span-4 max-[769px]:col-span-6 max-[641px]:hidden" />
+                    <div class="col-span-12 max-[769px]:col-span-12">
                         <UFormField
                             name="message"
                             :label="useString(state, 'form_message')"
@@ -215,14 +215,14 @@ const onSubmit = async () => {
                             />
                         </UFormField>
                     </div>
-                    <div class="col-span-8">
+                    <div class="col-span-8 max-[769px]:col-span-12 max-[641px]:col-span-12">
                         <UCheckbox
                             v-model="formState.legal"
                             color="neutral"
                             :label="useString(state, 'form_legal')"
                         />
                     </div>
-                    <div class="col-span-4 flex items-center justify-end gap-x-2.5">
+                    <div class="col-span-4 flex items-center justify-end gap-x-2.5 max-[769px]:col-span-12 max-[769px]:justify-start">
                         <UButton
                             class="ring-black text-black px-9 rounded-[30px] py-2.5 hover:bg-white/50"
                             @click="onCancel"

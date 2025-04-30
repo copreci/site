@@ -17,12 +17,12 @@ defineProps({ blok: Object })
             </div>
             <div
                 v-gsap.whenVisible.stagger.once.from="{ opacity: 0, y: 50, stagger: 0.4 }"
-                class="grid grid-cols-12 gap-x-20"
+                class="grid grid-cols-12 gap-x-20 max-[769px]:gap-y-10 max-[769px]:gap-x-0"
             >
                 <div
                     v-for="item in blok.items"
                     :key="item._uid"
-                    class="col-span-3"
+                    class="col-span-3 max-[769px]:col-span-6"
                 >
                     <p class="fs-45/60 text-white font-medium">
                         {{ item.data }}

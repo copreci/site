@@ -52,7 +52,7 @@ export default defineAppConfig({
             },
         },
         container: {
-            base: 'px-4 sm:px-4 lg:px-0',
+            base: 'px-4 sm:px-4 lg:px-0 max-[1367px]:px-12! max-[769px]:px-9! max-[641px]:px-6!',
         },
         formField: {
             slots: {

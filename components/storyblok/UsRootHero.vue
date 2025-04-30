@@ -20,7 +20,7 @@ const localePath = useLocalePath()
         <UContainer class="flex-1 flex flex-col justify-center">
             <header
                 v-gsap.delay-300.stagger.from="{ opacity: 0, x: -40 }"
-                class="flex-1 flex flex-col justify-center max-w-[60%] text-white"
+                class="flex-1 flex flex-col justify-center max-w-[60%] text-white max-[1025px]:max-w-full"
             >
                 <h1
                     class="mb-9 fs-60/60 font-light"
@@ -33,31 +33,32 @@ const localePath = useLocalePath()
             </header>
             <div
                 v-gsap.delay-300.from="{ opacity: 0, y: 100 }"
-                class="bg-copreci-500 px-16 py-6"
+                class="bg-copreci-500 px-16 py-6 max-[1281px]:px-6 max-[769px]:bg-transparent max-[769px]:py-0 max-[769px]:px-0"
             >
                 <div
                     v-gsap.delay-500.stagger.from="{ opacity: 0, x: -40 }"
-                    class="grid grid-cols-12 gap-x-3"
+                    class="grid grid-cols-12 gap-x-3 max-[769px]:grid-cols-1 max-[769px]:gap-y-1"
                 >
                     <div
                         v-for="item in blok.children"
                         :key="item._uid"
-                        class="col-span-3 border-r pl-12 border-white last:border-r-0"
+                        class="col-span-3 border-r pl-12 border-white last:border-r-0 max-[1025px]:border-none max-[1025px]:pl-0 max-[769px]:flex max-[769px]:items-center max-[769px]:bg-copreci-500 max-[769px]:px-4.5 max-[769px]:py-2.5"
                     >
-                        <div class="h-[64px] flex items-end mb-4">
+                        <div class="h-[64px] flex items-end mb-4 max-[1367px]:h-[40px] max-[769px]:w-[90px] max-[769px]:h-auto max-[769px]:mb-0 max-[769px]:flex max-[769px]:items-center max-[769px]:justify-start">
                             <img
                                 :src="item.icon.filename"
                                 :alt="item.icon.alt"
+                                class="max-[1367px]:max-h-[40px] max-[1367px]:max-w-[60px]"
                             >
                         </div>
                         <NuxtLink
                             :to="localePath(`/${item.link.cached_url}`)"
-                            class="group text-white flex items-center gap-x-6"
+                            class="group text-white flex items-center gap-x-6 max-[769px]:flex-1"
                         >
-                            <span class="fs-22/32 font-bold">{{ item.name }}</span>
+                            <span class="fs-22/32 font-bold max-[769px]:flex-1">{{ item.name }}</span>
                             <UIcon
                                 name="i-heroicons-arrow-long-right"
-                                class="group-hover:translate-x-1 transition-transform duration-300"
+                                class="group-hover:translate-x-1 transition-transform duration-300 max-[769px]:size-6"
                             />
                         </NuxtLink>
                     </div>

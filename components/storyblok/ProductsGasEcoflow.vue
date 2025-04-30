@@ -30,11 +30,11 @@ defineProps({ blok: Object })
                 </div>
                 <template v-if="blok.columns">
                     <div class="copreci-text">
-                        <div class="columns">
+                        <div class="columns max-[769px]:flex-wrap max-[769px]:-m-2.5 max-[769px]:space-x-0">
                             <div
                                 v-for="column in blok.columns"
                                 :key="column._uid"
-                                class="w-1/2"
+                                class="w-1/2 max-[769px]:p-2.5"
                             >
                                 <h5 class="mb-4">
                                     {{ column.title }}

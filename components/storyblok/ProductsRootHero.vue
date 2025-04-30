@@ -33,21 +33,22 @@ const localePath = useLocalePath()
             </header>
             <div
                 v-gsap.delay-300.from="{ opacity: 0, y: 100 }"
-                class="bg-copreci-500 px-16 py-6"
+                class="bg-copreci-500 px-16 py-6 max-[1281px]:px-6 max-[769px]:bg-transparent max-[769px]:py-0 max-[769px]:px-0"
             >
                 <div
                     v-gsap.delay-500.stagger.from="{ opacity: 0, x: -40 }"
-                    class="grid grid-cols-12 gap-x-3"
+                    class="grid grid-cols-12 gap-x-3 max-[769px]:grid-cols-1 max-[769px]:gap-y-1"
                 >
                     <div
                         v-for="item in blok.children"
                         :key="item._uid"
-                        class="col-span-4 border-r pl-12 border-white last:border-r-0 flex space-x-6"
+                        class="col-span-4 border-r pl-12 border-white last:border-r-0 flex space-x-6 max-[1025px]:border-none max-[1025px]:pl-0 max-[769px]:flex max-[769px]:items-center max-[769px]:bg-copreci-500 max-[769px]:px-4.5 max-[769px]:py-2.5"
                     >
                         <div class="shrink-0">
                             <img
                                 :src="item.icon.filename"
                                 :alt="item.icon.alt"
+                                class="max-[1367px]:max-h-[40px] max-[1367px]:max-w-[60px]"
                             >
                         </div>
                         <div class="flex flex-col justify-between">

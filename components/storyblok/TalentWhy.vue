@@ -7,7 +7,7 @@ defineProps({
 <template>
     <section
         v-if="blok"
-        class="py-32 copreci-section--red"
+        class="py-32 copreci-section--red max-[769px]:py-20"
     >
         <UContainer>
             <header class="copreci-text copreci-header copreci-text--white">
@@ -16,7 +16,7 @@ defineProps({
                 </h2>
             </header>
             <div class="w-8/12">
-                <div class="grid grid-cols-12 gap-10">
+                <div class="grid grid-cols-12 gap-10 max-[769px]:grid-cols-1 max-[769px]:gap-y-4.5">
                     <div
                         v-for="item in blok.items"
                         :key="item.id"

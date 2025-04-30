@@ -14,7 +14,7 @@ const onScrollTo = (id: string) => {
 <template>
     <div
         v-if="blok"
-        class="sticky top-[73px] border-t border-b border-copreci-500 bg-white z-40"
+        class="sticky top-[73px] border-t border-b border-copreci-500 bg-white z-40 z-40 overflow-hidden max-[1281px]:top-[64px] max-[769px]:hidden"
     >
         <UContainer>
             <nav class="py-4">

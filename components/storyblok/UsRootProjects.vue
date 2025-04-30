@@ -17,14 +17,14 @@ const to = computed(() => {
         v-if="blok"
         class="relative w-full h-full"
     >
-        <div class="relative w-full h-[90vh] overflow-hidden">
+        <div class="relative w-full h-[90vh] overflow-hidden max-[769px]:h-auto">
             <img
                 v-gsap.whenVisible.delay-500.from="{ opacity: 0, scale: 1.1 }"
                 :src="blok.image.filename"
                 :alt="blok.image.alt"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover max-[769px]:absolute"
             >
-            <div class="absolute top-0 left-0 w-full h-full py-20">
+            <div class="absolute top-0 left-0 w-full h-full py-20 max-[769px]:relative">
                 <UContainer>
                     <header class="copreci-text">
                         <h2>
