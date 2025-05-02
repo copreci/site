@@ -4,24 +4,12 @@ const props = defineProps({
     span: Number,
 })
 
-const { locale } = useI18n()
-const localePath = useLocalePath()
-
 const columns = computed(() => {
     if (props.span && props.span == 2) {
         return 'col-span-6'
     }
     else {
         return 'col-span-4'
-    }
-})
-
-const to = computed(() => {
-    if (locale.value === 'es') {
-        return localePath(`/${props.blok?.link.cached_url}`)
-    }
-    else {
-        return localePath(props.blok?.link.cached_url)
     }
 })
 </script>
@@ -32,7 +20,7 @@ const to = computed(() => {
         :class="`flex flex-col ${columns} border-r border-copreci-500 last:border-r-0 max-[769px]:flex-row max-[769px]:col-span-12! max-[769px]:border-b max-[769px]:border-r-0! max-[769px]:last:border-b-0!`"
     >
         <NuxtLink
-            :to="to"
+            :to="`/${blok.link.story.full_slug}`"
             class="group relative h-[25vw] w-full bg-copreci-bg-light overflow-hidden max-[769px]:h-auto max-[769px]:block max-[769px]:w-[25vw] max-[641px]:w-[35vw]"
         >
             <img
@@ -59,7 +47,7 @@ const to = computed(() => {
             </div>
             <div>
                 <NuxtLink
-                    :to="to"
+                    :to="`/${blok.link.story.full_slug}`"
                     class="group flex items-center space-x-2 space-between px-6 py-4 border-t border-copreci-500 text-copreci-500 bg-white hover:bg-copreci-500/5 transition-colors duration-300 max-[641px]:fs-13/16 max-[641px]:py-2.5"
                 >
                     <span class="flex-1 group-hover:translate-x-1 transition-transform duration-300">{{ blok.link_label }}</span>

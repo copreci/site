@@ -260,6 +260,13 @@ article {
     }
 }
 
+@utility copreci-text--actuality {
+    @apply gap-y-4;
+    ul {
+        @apply list-disc pl-4;
+    }
+}
+
 @utility copreci-page-header {
     @apply flex flex-col gap-y-6;
     h2 {

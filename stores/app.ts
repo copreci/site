@@ -9,6 +9,13 @@ export const useAppStore = defineStore('app', () => {
         menu: any[]
         ssmm: any[]
         legal: any[]
+        downloads: string
+        about_page: string
+        projects_page: string
+        talent_page: string
+        actuality_page: string
+        products_page: string
+        slugs: any[]
     }>({
         strings: [],
         logo: '',
@@ -17,6 +24,13 @@ export const useAppStore = defineStore('app', () => {
         menu: [],
         ssmm: [],
         legal: [],
+        downloads: '',
+        about_page: '',
+        projects_page: '',
+        talent_page: '',
+        actuality_page: '',
+        products_page: '',
+        slugs: [],
     })
 
     return {

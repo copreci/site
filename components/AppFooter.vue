@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { state } = useAppStore()
-const { locale } = useI18n()
 const localePath = useLocalePath()
 
 const items = computed(() => {
@@ -76,7 +75,7 @@ const items = computed(() => {
                         class="mt-4 max-[769px]:mt-0"
                     >
                         <NuxtLink
-                            to=""
+                            :to="state.about_page"
                             class="group flex items-center gap-x-4.5 text-white cursor-pointer"
                         >
                             <span class="fs-13/16">
@@ -93,7 +92,7 @@ const items = computed(() => {
                         class="mt-4 max-[769px]:mt-0"
                     >
                         <p class="fs-18/25 text-white">
-                            <NuxtLink to="/">
+                            <NuxtLink :to="state.projects_page">
                                 {{ useString(state, 'footer_projects_content') }}
                             </NuxtLink>
                         </p>
@@ -103,7 +102,7 @@ const items = computed(() => {
                         class="mt-4 max-[769px]:mt-0"
                     >
                         <p class="fs-18/25 text-white">
-                            <NuxtLink :to="localePath('/talento')">
+                            <NuxtLink :to="state.talent_page">
                                 {{ useString(state, 'footer_talent_content') }}
                             </NuxtLink>
                         </p>
@@ -146,7 +145,7 @@ const items = computed(() => {
                             :key="item._uid"
                         >
                             <NuxtLink
-                                :to="item.link.linktype == 'story' ? locale != 'es' ? localePath(item.link.cached_url) : localePath(`/${item.link.cached_url}`) : item.link.url"
+                                :to="item.link.linktype == 'story' ? `/${item.link.story.full_slug}` : item.link.url"
                                 class="text-white fs-13/16 hover:underline"
                             >
                                 {{ item.label }}

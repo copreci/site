@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps({ blok: Object })
-const localePath = useLocalePath()
+const { state } = useAppStore()
 </script>
 
 <template>
@@ -16,7 +16,7 @@ const localePath = useLocalePath()
                     </h2>
                     <div class="copreci-text__button">
                         <UButton
-                            :to="localePath('/nosotros')"
+                            :to="state.about_page"
                             :label="blok.button"
                             trailing-icon="i-heroicons-arrow-long-right"
                         />

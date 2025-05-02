@@ -15,8 +15,8 @@ defineProps({ blok: Object })
                     </h2>
                     <div class="copreci-text__button">
                         <UButton
-                            :to="blok.link.url"
-                            href="blank"
+                            :href="blok.link.url"
+                            target="_blank"
                             :label="blok.link_label"
                             trailing-icon="i-heroicons-arrow-long-right"
                             variant="solid"

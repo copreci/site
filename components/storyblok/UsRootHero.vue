@@ -1,7 +1,5 @@
 <script setup lang="ts">
 defineProps({ blok: Object })
-
-const localePath = useLocalePath()
 </script>
 
 <template>
@@ -52,7 +50,7 @@ const localePath = useLocalePath()
                             >
                         </div>
                         <NuxtLink
-                            :to="localePath(`/${item.link.cached_url}`)"
+                            :to="`/${item.link.story.full_slug}`"
                             class="group text-white flex items-center gap-x-6 max-[769px]:flex-1"
                         >
                             <span class="fs-22/32 font-bold max-[769px]:flex-1">{{ item.name }}</span>

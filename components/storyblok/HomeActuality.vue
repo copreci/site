@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps({ blok: Object })
 
-const localePath = useLocalePath()
+const { state } = useAppStore()
 
 const highlights_left = computed(() => {
     return [
@@ -10,7 +10,7 @@ const highlights_left = computed(() => {
             image: props.blok?.highlights[0]?.content?.image,
             text_left: props.blok?.highlights[0]?.content?.text_left,
             text_right: props.blok?.highlights[0]?.content?.text_right,
-            to: localePath(`/${props.blok?.highlights[0]?.full_slug}`),
+            to: `/${props.blok?.highlights[0]?.full_slug}`,
         },
     ]
 })
@@ -22,14 +22,14 @@ const highlights_right = computed(() => {
             image: props.blok?.highlights[1]?.content?.image,
             text_left: props.blok?.highlights[1]?.content?.text_left,
             text_right: props.blok?.highlights[1]?.content?.text_right,
-            to: localePath(`/${props.blok?.highlights[1]?.full_slug}`),
+            to: `/${props.blok?.highlights[1]?.full_slug}`,
         },
         {
             title: props.blok?.highlights[2]?.content?.title,
             image: props.blok?.highlights[2]?.content?.image,
             text_left: props.blok?.highlights[2]?.content?.text_left,
             text_right: props.blok?.highlights[2]?.content?.text_right,
-            to: localePath(`/${props.blok?.highlights[2]?.full_slug}`),
+            to: `/${props.blok?.highlights[2]?.full_slug}`,
         },
     ]
 })
@@ -133,7 +133,7 @@ const highlights_right = computed(() => {
             </div>
             <div class="mt-20">
                 <UButton
-                    :to="localePath('/actualidad')"
+                    :to="state.actuality_page"
                     :label="blok.more"
                     trailing-icon="i-heroicons-arrow-long-right"
                 />

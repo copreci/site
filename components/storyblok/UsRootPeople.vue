@@ -1,14 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
-const { locale } = useI18n()
-const localePath = useLocalePath()
-
-const to = computed(() => {
-    if (locale.value === 'es') {
-        return localePath(`/${props.blok?.link.cached_url}`)
-    }
-    return localePath(props.blok?.link.cached_url)
-})
+defineProps({ blok: Object })
 </script>
 
 <template>
@@ -30,7 +21,7 @@ const to = computed(() => {
                     </div>
                     <div class="copreci-text__button">
                         <UButton
-                            :to="to"
+                            :to="`/${blok.link.story.full_slug}`"
                             :label="blok.link_label"
                             trailing-icon="i-heroicons-arrow-long-right"
                             variant="link"

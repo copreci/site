@@ -4,9 +4,6 @@ import emblaCarouselVue from 'embla-carousel-vue'
 
 const props = defineProps({ blok: Object })
 
-const { locale } = useI18n()
-const localePath = useLocalePath()
-
 const [emblaRef1, emblaApi1] = emblaCarouselVue({}, [Fade()])
 const [emblaRef2, emblaApi2] = emblaCarouselVue({
     loop: true,
@@ -16,7 +13,7 @@ const items = computed(() => {
     return [
         {
             id: 0,
-            to: locale != 'es' ? localePath('/productos/gas') : localePath('/productos/gas'),
+            to: `/${props.blok?.gas_link.story.full_slug}`,
             title: props.blok?.gas_title,
             description: props.blok?.gas_description,
             background: props.blok?.gas_background,
@@ -34,7 +31,7 @@ const items = computed(() => {
         },
         {
             id: 1,
-            to: locale != 'es' ? localePath('/productos/motores') : localePath('/productos/motores'),
+            to: `/${props.blok?.engine_link.story.full_slug}`,
             title: props.blok?.engine_title,
             description: props.blok?.engine_description,
             background: props.blok?.engine_background,
@@ -52,7 +49,7 @@ const items = computed(() => {
         },
         {
             id: 2,
-            to: locale != 'es' ? localePath('/productos/induccion') : localePath('/productos/induccion'),
+            to: `/${props.blok?.induction_link.story.full_slug}`,
             title: props.blok?.induction_title,
             description: props.blok?.induction_description,
             background: props.blok?.induction_background,

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 defineProps({ blok: Object })
-
-const localePath = useLocalePath()
 </script>
 
 <template>
@@ -25,7 +23,7 @@ const localePath = useLocalePath()
                         </p>
                         <div class="copreci-text__button">
                             <UButton
-                                :to="localePath(`/${blok.link.cached_url}`)"
+                                :to="`/${blok.link.story.full_slug}`"
                                 :label="blok.more"
                                 trailing-icon="i-heroicons-arrow-long-right"
                             />

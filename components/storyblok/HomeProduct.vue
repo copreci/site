@@ -3,8 +3,6 @@ defineProps({
     blok: Object,
     index: Number,
 })
-
-const localePath = useLocalePath()
 </script>
 
 <template>
@@ -12,7 +10,7 @@ const localePath = useLocalePath()
         v-if="blok"
     >
         <NuxtLink
-            :to="localePath(`/${blok.link.cached_url}`)"
+            :to="`/${blok.link.story.full_slug}`"
             class="block h-[230px] overflow-hidden mb-6"
         >
             <img
@@ -24,7 +22,7 @@ const localePath = useLocalePath()
         <header>
             <h3>
                 <NuxtLink
-                    :to="localePath(`/${blok.link.cached_url}`)"
+                    :to="`/${blok.link.story.full_slug}`"
                     class="group flex items-center gap-x-2.5 fs-20/28"
                 >
                     <span>{{ blok.name }}</span>

@@ -2,24 +2,9 @@
 import { vOnClickOutside } from '@vueuse/components'
 
 const { state } = useAppStore()
-const { locale, locales } = useI18n()
 const localePath = useLocalePath()
-const switchLocalePath = useSwitchLocalePath()
 
 const route = useRoute()
-
-const availableLocales = computed(() => {
-    return locales.value.filter((i) => i.code !== locale.value)
-})
-
-const navItems = ref(state.menu.map((item) => {
-    return {
-        label: item.label,
-        to: locale.value != 'es' ? localePath(item.link.cached_url) : localePath(`/${item.link.cached_url}`),
-        submenu: item.submenu,
-        open: false,
-    }
-}))
 
 const subnavOpen = ref<number | undefined>()
 const navMenu = ref<boolean>(false)
@@ -39,7 +24,7 @@ watch(() => route.path, () => {
                     <li>
                         <NuxtLink
                             class="fs-13/16 py-1"
-                            :to="locale != 'es' ? localePath('/descargas') : localePath('/descargas')"
+                            :to="state.downloads"
                         >{{ useString(state, 'downloads') }}</NuxtLink>
                     </li>
                     <li>
@@ -48,19 +33,21 @@ watch(() => route.path, () => {
                                 <span>{{ useString(state, 'language') }}</span>
                                 <UIcon name="i-heroicons-plus" />
                             </button>
-                            <ul class="absolute top-full left-0 flex flex-col opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z-50">
-                                <li
-                                    v-for="loc in availableLocales"
-                                    :key="loc.code"
-                                >
-                                    <NuxtLink
-                                        class="block fs-13/16 bg-copreci-bg-light py-1.5 px-4 whitespace-nowrap hover:bg-copreci-bg-dark"
-                                        :to="switchLocalePath(loc.code)"
+                            <ClientOnly>
+                                <ul class="absolute top-full left-0 flex flex-col opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                                    <li
+                                        v-for="loc in state.slugs"
+                                        :key="loc.slug"
                                     >
-                                        {{ loc.name }}
-                                    </NuxtLink>
-                                </li>
-                            </ul>
+                                        <a
+                                            class="block fs-13/16 bg-copreci-bg-light py-1.5 px-4 whitespace-nowrap hover:bg-copreci-bg-dark"
+                                            :href="loc.slug"
+                                        >
+                                            {{ loc.name }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ClientOnly>
                         </div>
                     </li>
                 </ul>
@@ -85,7 +72,7 @@ watch(() => route.path, () => {
                             >
                                 <div class="flex items-center gap-2">
                                     <NuxtLink
-                                        :to="locale != 'es' ? localePath(item.link.cached_url) : localePath(`/${item.link.cached_url}`)"
+                                        :to="`/${item.link.story.full_slug}`"
                                         class="fs-13/16 hover:text-copreci"
                                     >
                                         {{ item.label }}
@@ -134,7 +121,7 @@ watch(() => route.path, () => {
                                 :key="subitem.label"
                             >
                                 <NuxtLink
-                                    :to="locale != 'es' ? localePath(subitem.link.cached_url) : localePath(`/${subitem.link.cached_url}`)"
+                                    :to="`/${subitem.link.story.full_slug}`"
                                     class="flex items-center gap-4 group"
                                 >
                                     <img
@@ -163,11 +150,11 @@ watch(() => route.path, () => {
             <nav class="border-b border-b-copreci-500">
                 <ul>
                     <li
-                        v-for="(item) in navItems"
+                        v-for="(item) in state.menu"
                         :key="item.label"
                     >
                         <NuxtLink
-                            :to="item.to"
+                            :to="`/${item.link.story.full_slug}`"
                             class="flex items-center justify-between w-full border-t border-copreci-bg-light py-6 px-6 bg-white hover:text-copreci-500"
                         >
                             <span class="fs-25/30 font-light">{{ item.label }}</span>
@@ -188,7 +175,7 @@ watch(() => route.path, () => {
                                 :key="subitem.label"
                             >
                                 <NuxtLink
-                                    :to="locale != 'es' ? localePath(subitem.link.cached_url) : localePath(`/${subitem.link.cached_url}`)"
+                                    :to="`/${subitem.link.story.full_slug}`"
                                     class="flex items-center justify-between gap-4 group bg-copreci-bg-light px-6 py-4.5 border-t border-t-copreci-bg-dark"
                                 >
                                     <div class="flex items-center gap-4">
@@ -215,7 +202,7 @@ watch(() => route.path, () => {
                 <li>
                     <NuxtLink
                         class="fs-20/25 flex items-center justify-between gap-4 group bg-copreci-bg-light px-6 py-6 border-t border-t-copreci-bg-dark"
-                        :to="locale != 'es' ? localePath('/descargas') : localePath('/descargas')"
+                        :to="state.downloads"
                     >{{ useString(state, 'downloads') }}</NuxtLink>
                 </li>
                 <li>
@@ -235,15 +222,15 @@ watch(() => route.path, () => {
                     </div>
                     <ul v-if="navLanguage">
                         <li
-                            v-for="loc in availableLocales"
-                            :key="loc.code"
+                            v-for="loc in state.slugs"
+                            :key="loc.slug"
                         >
-                            <NuxtLink
+                            <a
                                 class="block fs-16/20 border-t border-t-copreci-bg-dark bg-copreci-bg-light py-6 px-6 whitespace-nowrap hover:bg-copreci-bg-dark"
-                                :to="switchLocalePath(loc.code)"
+                                :href="loc.slug"
                             >
                                 {{ loc.name }}
-                            </NuxtLink>
+                            </a>
                         </li>
                     </ul>
                 </li>

@@ -2,7 +2,6 @@
 defineProps({ blok: Object })
 
 const { locale } = useI18n()
-const localePath = useLocalePath()
 
 const api = useStoryblokApi()
 
@@ -22,6 +21,8 @@ const fetchStories = async () => {
         page: page.value,
         per_page: per_page,
         language: locale.value,
+        sort_by: 'content.date:desc',
+        resolve_links: 'url',
     })
 
     loading.value = false
@@ -62,7 +63,7 @@ onMounted(async () => {
                         class="copreci_card"
                     >
                         <NuxtLink
-                            :to="locale == 'es' ? localePath(`/${item.full_slug}`) : localePath(item.full_slug)"
+                            :to="`/${item.full_slug}`"
                             class="copreci_card__image"
                         >
                             <img
@@ -72,7 +73,7 @@ onMounted(async () => {
                         </NuxtLink>
                         <div class="copreci_card__content copreci_card__content--sm">
                             <h3>
-                                <NuxtLink :to="locale == 'es' ? localePath(`/${item.full_slug}`) : localePath(item.full_slug)">
+                                <NuxtLink :to="`/${item.full_slug}`">
                                     {{ item.content.title }}
                                 </NuxtLink>
                             </h3>
@@ -92,7 +93,7 @@ onMounted(async () => {
                 </div>
             </div>
             <div v-else>
-                <div class="copreci-grid copreci-grid--gap-sm">
+                <div class="copreci-grid copreci-grid--gap-sm gap-y-8">
                     <div
                         v-for="i in per_page"
                         :key="i"
