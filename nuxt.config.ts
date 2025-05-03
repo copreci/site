@@ -78,6 +78,16 @@ export default defineNuxtConfig({
         }],
         defaultLocale: 'es',
     },
+    scripts: {
+        registry: {
+            googleAnalytics: {
+                id: 'G-6NCMHXF9XJ',
+            },
+            googleTagManager: {
+                id: 'GTM-N9GNMK9',
+            },
+        },
+    },
     storyblok: {
         accessToken: import.meta.env.NUXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
         apiOptions: { cache: { type: 'memory', clear: 'auto' } },
