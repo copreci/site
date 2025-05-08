@@ -16,6 +16,7 @@ export const useAppStore = defineStore('app', () => {
         actuality_page: string
         products_page: string
         slugs: any[]
+        seo: any
     }>({
         strings: [],
         logo: '',
@@ -31,6 +32,7 @@ export const useAppStore = defineStore('app', () => {
         actuality_page: '',
         products_page: '',
         slugs: [],
+        seo: undefined,
     })
 
     return {

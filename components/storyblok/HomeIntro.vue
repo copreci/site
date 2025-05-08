@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({ blok: Object })
+defineProps({ blok: Object })
 </script>
 
 <template>

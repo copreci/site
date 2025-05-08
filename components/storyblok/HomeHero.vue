@@ -103,16 +103,16 @@ watch(() => active.value, (value) => {
                 </div>
                 <div class="flex flex-col gap-y-3 absolute py-9 pl-screen pr-18 w-full h-full top-0 left-0 text-white pointer-events-none max-[769px]:pr-9 max-[769px]:h-auto max-[769px]:relative max-[769px]:py-20">
                     <header class="flex-1 flex items-center max-[769px]:mb-8">
-                        <h1
+                        <h2
                             v-gsap.whenVisible.animateText.slow.once
                             class="fs-60/60 font-light"
                         >
                             {{ blok.title }}
-                        </h1>
+                        </h2>
                     </header>
-                    <h2 class="fs-20/55">
+                    <h1 class="fs-20/55">
                         {{ blok.claim }}
-                    </h2>
+                    </h1>
                 </div>
             </div>
             <div class="col-span-4 flex flex-col max-[1025px]:col-span-5">

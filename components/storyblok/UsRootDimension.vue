@@ -14,14 +14,14 @@ defineProps({ blok: Object })
                         <h2 v-gsap.whenVisible.animateText.slow.once>
                             {{ blok.title }}
                         </h2>
-                        <div class="copreci-text__button">
+                        <h3 class="copreci-text__button">
                             <UButton
                                 :to="`/${blok.link.story.full_slug}`"
                                 :label="blok.link_label"
                                 variant="soft"
                                 trailing-icon="i-heroicons-arrow-long-right"
                             />
-                        </div>
+                        </h3>
                     </header>
                 </div>
             </div>

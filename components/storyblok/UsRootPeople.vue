@@ -19,7 +19,7 @@ defineProps({ blok: Object })
                             :alt="blok.logo.alt"
                         >
                     </div>
-                    <div class="copreci-text__button">
+                    <h3 class="copreci-text__button">
                         <UButton
                             :to="`/${blok.link.story.full_slug}`"
                             :label="blok.link_label"
@@ -27,7 +27,7 @@ defineProps({ blok: Object })
                             variant="link"
                             size="lg"
                         />
-                    </div>
+                    </h3>
                 </header>
             </div>
             <div class="col-span-6 relative">

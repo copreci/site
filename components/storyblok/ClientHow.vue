@@ -10,10 +10,10 @@ defineProps({ blok: Object })
         <UContainer class="py-20">
             <div class="copreci-grid">
                 <div class="col-span-12">
-                    <header class="copreci-text copreci-text--sm copreci-header">
-                        <h4 v-gsap.whenVisible.animateText.slow.once>
+                    <header class="copreci-text copreci-text--sm copreci-header copreci-text-h3-as-h4">
+                        <h3 v-gsap.whenVisible.animateText.slow.once>
                             {{ blok.title }}
-                        </h4>
+                        </h3>
                     </header>
                 </div>
             </div>

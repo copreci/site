@@ -20,14 +20,14 @@ defineProps({ blok: Object })
                 v-gsap.delay-300.stagger.from="{ opacity: 0, x: -40 }"
                 class="flex-1 flex flex-col justify-center max-w-[60%] text-white"
             >
-                <h1
+                <h2
                     class="mb-9 fs-60/60 font-light"
                 >
                     {{ blok.title }}
-                </h1>
-                <h2 class="fs-20/28">
-                    {{ blok.subtitle }}
                 </h2>
+                <h1 class="fs-20/28">
+                    {{ blok.subtitle }}
+                </h1>
             </header>
         </UContainer>
     </section>

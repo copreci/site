@@ -12,10 +12,10 @@ defineProps({ blok: Object })
             class="copreci-grid"
         >
             <div class="pl-screen col-span-8 copreci-column-padding">
-                <header class="copreci-text copreci-header">
-                    <h2 v-gsap.whenVisible.animateText.slow.once>
+                <header class="copreci-text copreci-header copreci-text-h3-as-h2">
+                    <h3 v-gsap.whenVisible.animateText.slow.once>
                         {{ blok.title }}
-                    </h2>
+                    </h3>
                 </header>
                 <div class="copreci-grid">
                     <div class="col-span-6">
@@ -30,7 +30,7 @@ defineProps({ blok: Object })
                             <p>
                                 {{ blok.text_right }}
                             </p>
-                            <div
+                            <h4
                                 v-if="blok.link_label"
                                 class="copreci-text__button"
                             >
@@ -39,7 +39,7 @@ defineProps({ blok: Object })
                                     :label="blok.link_label"
                                     trailing-icon="i-heroicons-arrow-long-right"
                                 />
-                            </div>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -70,10 +70,10 @@ defineProps({ blok: Object })
                 </div>
             </div>
             <div class="pr-screen col-span-8 copreci-column-padding order-2 max-[769px]:pl-screen">
-                <header class="copreci-text copreci-header">
-                    <h2 v-gsap.whenVisible.animateText.slow.once>
+                <header class="copreci-text copreci-header copreci-text-h3-as-h2">
+                    <h3 v-gsap.whenVisible.animateText.slow.once>
                         {{ blok.title }}
-                    </h2>
+                    </h3>
                 </header>
                 <div class="copreci-grid">
                     <div class="col-span-6">
@@ -88,7 +88,7 @@ defineProps({ blok: Object })
                             <p>
                                 {{ blok.text_right }}
                             </p>
-                            <div
+                            <h4
                                 v-if="blok.link_label"
                                 class="copreci-text__button"
                             >
@@ -97,7 +97,7 @@ defineProps({ blok: Object })
                                     :label="blok.link_label"
                                     trailing-icon="i-heroicons-arrow-long-right"
                                 />
-                            </div>
+                            </h4>
                         </div>
                     </div>
                 </div>

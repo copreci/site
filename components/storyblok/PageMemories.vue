@@ -22,7 +22,7 @@ const props = defineProps({ blok: Object })
                         <h2>{{ blok.title }}</h2>
                     </header>
                     <div class="copreci-text">
-                        <div class="copreci-text__button">
+                        <h3 class="copreci-text__button">
                             <UButton
                                 :href="blok.document.filename ?? '#'"
                                 :label="blok.link_label"
@@ -30,7 +30,7 @@ const props = defineProps({ blok: Object })
                                 variant="link"
                                 size="lg"
                             />
-                        </div>
+                        </h3>
                     </div>
                 </div>
             </div>

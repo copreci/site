@@ -34,7 +34,7 @@ defineProps({ blok: Object })
                         <h2>
                             {{ blok.sus_title }}
                         </h2>
-                        <div class="copreci-text__button">
+                        <h3 class="copreci-text__button">
                             <UButton
                                 :to="`/${blok.sus_link.story.full_slug}`"
                                 :label="blok.sus_link_label"
@@ -42,7 +42,7 @@ defineProps({ blok: Object })
                                 variant="solid"
                                 class="text-black"
                             />
-                        </div>
+                        </h3>
                     </div>
                 </div>
                 <div class="col-span-6 pl-12 max-[769px]:pl-0 max-[769px]:pt-20">
@@ -52,7 +52,7 @@ defineProps({ blok: Object })
                                 <h2>
                                     {{ blok.data_title }}
                                 </h2>
-                                <div class="copreci-text__button">
+                                <h3 class="copreci-text__button">
                                     <UButton
                                         :href="blok.data_einf.filename"
                                         target="_blank"
@@ -61,7 +61,7 @@ defineProps({ blok: Object })
                                         variant="link"
                                         size="lg"
                                     />
-                                </div>
+                                </h3>
                             </div>
                         </div>
                         <div class="col-span-6 z-[-1]" />

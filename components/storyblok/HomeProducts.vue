@@ -16,7 +16,7 @@ const { state } = useAppStore()
                         <h2>
                             {{ blok.title }}
                         </h2>
-                        <div class="copreci-text__link">
+                        <h3 class="copreci-text__link">
                             <UButton
                                 :to="state.products_page"
                                 :label="blok.button"
@@ -24,7 +24,7 @@ const { state } = useAppStore()
                                 variant="link"
                                 size="lg"
                             />
-                        </div>
+                        </h3>
                     </header>
                 </div>
             </div>

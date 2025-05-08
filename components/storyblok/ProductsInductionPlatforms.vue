@@ -12,7 +12,7 @@ const { state } = useAppStore()
         <UContainer>
             <div class="copreci-grid">
                 <div class="col-span-7">
-                    <header class="copreci-text copreci-text--sm copreci-header">
+                    <header class="copreci-text copreci-text--sm copreci-header copreci-text-h3-as-h4">
                         <StoryblokRichText :doc="blok.header" />
                     </header>
                 </div>

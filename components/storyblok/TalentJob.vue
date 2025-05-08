@@ -21,7 +21,7 @@ async function play() {
         <UContainer>
             <div class="copreci-grid">
                 <div class="col-span-8">
-                    <div class="copreci-text copreci-header copreci-text--sm">
+                    <div class="copreci-text copreci-header copreci-text--sm copreci-text-h3-as-h2">
                         <StoryblokRichText :doc="blok.header" />
                     </div>
                 </div>

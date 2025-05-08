@@ -35,7 +35,7 @@ const closeModal = () => {
                         <div class="copreci-text copreci-header">
                             <h2>{{ blok.title }}</h2>
                         </div>
-                        <div class="copreci-text copreci-text--sm">
+                        <div class="copreci-text copreci-text--sm copreci-text-h3-as-h4">
                             <StoryblokRichText :doc="blok.description" />
                             <template v-if="blok.columns">
                                 <div class="columns columns--wrap">

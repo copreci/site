@@ -14,13 +14,13 @@ const { state } = useAppStore()
                     <h2>
                         {{ blok.title }}
                     </h2>
-                    <div class="copreci-text__button">
+                    <h3 class="copreci-text__button">
                         <UButton
                             :to="state.about_page"
                             :label="blok.button"
                             trailing-icon="i-heroicons-arrow-long-right"
                         />
-                    </div>
+                    </h3>
                 </header>
             </div>
             <div class="col-span-6 relative">

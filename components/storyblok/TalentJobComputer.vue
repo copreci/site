@@ -11,10 +11,10 @@ defineProps({ blok: Object })
         <UContainer>
             <div class="copreci-grid">
                 <div class="col-span-12">
-                    <header class="copreci-text copreci-header">
-                        <h2>
+                    <header class="copreci-text copreci-header copreci-text-h3-as-h2">
+                        <h3>
                             {{ blok.title }}
-                        </h2>
+                        </h3>
                     </header>
                 </div>
             </div>

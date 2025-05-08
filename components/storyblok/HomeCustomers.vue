@@ -21,13 +21,13 @@ defineProps({ blok: Object })
                         <p>
                             {{ blok.description }}
                         </p>
-                        <div class="copreci-text__button">
+                        <h3 class="copreci-text__button">
                             <UButton
                                 :to="`/${blok.link.story.full_slug}`"
                                 :label="blok.more"
                                 trailing-icon="i-heroicons-arrow-long-right"
                             />
-                        </div>
+                        </h3>
                     </div>
                 </div>
             </div>

@@ -207,10 +207,10 @@ article {
     h2 {
         @apply fs-60/60 font-light text-(--color-copreci-500);
     }
-    h3 {
+    h3:not(.copreci-text__button, .copreci-text__link) {
         @apply fs-30/40 font-light text-(--color-copreci-500) whitespace-pre-wrap;
     }
-    h4 {
+    h4:not(.copreci-text__button, .copreci-text__link) {
         @apply fs-25/30 font-medium text-black;
     }
     p {
@@ -243,7 +243,7 @@ article {
     h5 {
         @apply fs-18/25 font-medium text-copreci-500;
     }
-    h4 {
+    h4:not(.copreci-text__button, .copreci-text__link) {
         @apply fs-25/30 font-light text-black;
     }
     h6 {
@@ -251,6 +251,18 @@ article {
     }
     p {
         @apply fs-18/25 font-light text-black whitespace-pre-wrap;
+    }
+}
+
+@utility copreci-text-h3-as-h2 {
+    h3 {
+        @apply !fs-60/60 !font-light !text-(--color-copreci-500);
+    }
+}
+
+@utility copreci-text-h3-as-h4 {
+    h3 {
+        @apply !fs-25/30 !font-light !text-black;
     }
 }
 
@@ -272,7 +284,7 @@ article {
     h2 {
         @apply fs-60/60 font-light text-(--color-copreci-500) whitespace-pre-wrap;
     }
-    p {
+    h1 {
         @apply fs-20/28 font-normal text-black whitespace-pre-wrap;
     }
 }

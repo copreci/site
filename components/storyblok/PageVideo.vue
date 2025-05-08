@@ -6,7 +6,6 @@ const isPlaying = ref(false)
 const video = ref()
 
 async function play() {
-    console.log('Play video')
     await video.value.play()
 }
 </script>

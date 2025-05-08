@@ -97,18 +97,20 @@ onMounted(() => {
         </div>
         <div class="py-6 border-b border-copreci-500">
             <UContainer>
-                <button
-                    class="flex items-center gap-x-4 fs-20/28 text-copreci-500 cursor-pointer hover:opacity-80"
-                    @click="onScrollTo"
-                >
-                    <span>
-                        {{ blok.scrollto }}
-                    </span>
-                    <UIcon
-                        class="size-6 font-light"
-                        name="i-heroicons-arrow-down-circle"
-                    />
-                </button>
+                <h1>
+                    <button
+                        class="flex items-center gap-x-4 fs-20/28 text-copreci-500 cursor-pointer hover:opacity-80"
+                        @click="onScrollTo"
+                    >
+                        <span>
+                            {{ blok.scrollto }}
+                        </span>
+                        <UIcon
+                            class="size-6 font-light"
+                            name="i-heroicons-arrow-down-circle"
+                        />
+                    </button>
+                </h1>
             </UContainer>
         </div>
     </section>

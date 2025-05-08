@@ -132,11 +132,13 @@ const highlights_right = computed(() => {
                 </div>
             </div>
             <div class="mt-20">
-                <UButton
-                    :to="state.actuality_page"
-                    :label="blok.more"
-                    trailing-icon="i-heroicons-arrow-long-right"
-                />
+                <h3>
+                    <UButton
+                        :to="state.actuality_page"
+                        :label="blok.more"
+                        trailing-icon="i-heroicons-arrow-long-right"
+                    />
+                </h3>
             </div>
         </UContainer>
     </section>
