@@ -118,17 +118,5 @@ const closeModal = () => {
                 </div>
             </div>
         </div>
-        <div class="bg-copreci-500">
-            <UContainer class="text-center">
-                <UButton
-                    to="/"
-                    :label="useString(state, 'product_download')"
-                    variant="link"
-                    size="lg"
-                    trailing-icon="i-heroicons-arrow-long-down"
-                    class="text-white hover:text-white/80"
-                />
-            </Ucontainer>
-        </div>
     </section>
 </template>

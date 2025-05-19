@@ -105,6 +105,11 @@ watch(() => whatShow, (value) => {
                     />
                 </div>
             </UContainer>
+            <UContainer class="mt-20">
+                <a :href="blok.mailbox_link.url" target="_blank" class="p-1.5 block bg-copreci-500 text-center text-white rounded-3xl hover:bg-copreci-600">
+                    <StoryblokRichText :doc="blok.mailbox" />
+                </a>
+            </UContainer>
         </section>
     </article>
 </template>
