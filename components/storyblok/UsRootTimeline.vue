@@ -18,8 +18,19 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
 <template>
     <section
         v-if="blok"
-        class="bg-copreci-bg-light pt-12 pb-20 max-[640px]:pt-6 max-[640px]:pb-10"
+        class="bg-copreci-bg-light pt-12 pb-20 max-[640px]:pt-6 max-[640px]:pb-10 flex"
     >
+        <div class="min-h-full px-6 flex items-center">
+            <button
+                class="cursor-pointer hover:opacity-80"
+                @click="emblaApi?.scrollPrev()"
+            >
+                <Icon
+                    name="mdi:chevron-left"
+                    class="text-2xl"
+                />
+            </button>
+        </div>
         <div
             ref="emblaRef"
             class="embla"
@@ -69,6 +80,17 @@ const [emblaRef, emblaApi] = emblaCarouselVue({
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="min-h-full px-6 flex items-center">
+            <button
+                class="cursor-pointer hover:opacity-80"
+                @click="emblaApi?.scrollNext()"
+            >
+                <Icon
+                    name="mdi:chevron-right"
+                    class="text-2xl"
+                />
+            </button>
         </div>
     </section>
 </template>

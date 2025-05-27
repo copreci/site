@@ -13,6 +13,10 @@ const data = ref({
             title: props.blok?.quality_iso_title,
             downloads: props.blok?.quality_iso_files,
         },
+        iso14001: {
+            title: props.blok?.quality_iso_14001_title,
+            downloads: props.blok?.quality_iso_14001_files,
+        },
         eu: {
             title: props.blok?.quality_eu_title,
             downloads: props.blok?.quality_eu_files,
@@ -58,6 +62,10 @@ const data = ref({
             title: props.blok?.corporative_elements_title,
             downloads: props.blok?.corporative_elements_files,
         },
+        projects: {
+            title: props.blok?.corporative_projects_title,
+            downloads: props.blok?.corporative_projects_files,
+        },
     },
 })
 </script>
@@ -102,56 +110,6 @@ const data = ref({
                                 >
                                     <li
                                         v-for="download in data.quality.politics.downloads"
-                                        :key="download._uid"
-                                    >
-                                        <a
-                                            :href="download.filename"
-                                            class="copreci-download__link"
-                                            target="_blank"
-                                        >
-                                            <img :src="blok.icon.filename">
-                                            <span>{{ useFilename(download) }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="copreci-download__block">
-                                <header>
-                                    <h4>
-                                        {{ data.quality.iso.title }}
-                                    </h4>
-                                </header>
-                                <ul
-                                    v-if="data.quality.iso.downloads"
-                                    class="copreci-download__downloads"
-                                >
-                                    <li
-                                        v-for="download in data.quality.iso.downloads"
-                                        :key="download._uid"
-                                    >
-                                        <a
-                                            :href="download.filename"
-                                            class="copreci-download__link"
-                                            target="_blank"
-                                        >
-                                            <img :src="blok.icon.filename">
-                                            <span>{{ useFilename(download) }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="copreci-download__block">
-                                <header>
-                                    <h4>
-                                        {{ data.quality.eu.title }}
-                                    </h4>
-                                </header>
-                                <ul
-                                    v-if="data.quality.eu.downloads"
-                                    class="copreci-download__downloads"
-                                >
-                                    <li
-                                        v-for="download in data.quality.eu.downloads"
                                         :key="download._uid"
                                     >
                                         <a
@@ -300,6 +258,87 @@ const data = ref({
                                 </div>
                             </div>
                         </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.quality.iso.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.quality.iso.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.quality.iso.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.quality.iso14001.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.quality.iso14001.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.quality.iso14001.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.quality.eu.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.quality.eu.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.quality.eu.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </UContainer>
@@ -382,6 +421,33 @@ const data = ref({
                                 >
                                     <li
                                         v-for="download in data.corporative.elements.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.corporative.projects.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.corporative.projects.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.corporative.projects.downloads"
                                         :key="download._uid"
                                     >
                                         <a

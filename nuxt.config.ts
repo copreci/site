@@ -38,16 +38,11 @@ export default defineNuxtConfig({
         },
     },
     compatibilityDate: '2025-04-02',
-    /* nitro: {
+    nitro: {
         preset: 'cloudflare_module',
         cloudflare: {
             deployConfig: true,
             nodeCompat: true,
-        },
-    }, */
-    nitro: {
-        prerender: {
-            routes: ['/en', '/eu'],
         },
     },
     eslint: {

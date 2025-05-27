@@ -3,6 +3,7 @@ import type { RadioGroupItem } from '@nuxt/ui'
 import { z } from 'zod'
 
 const { state } = useAppStore()
+const route = useRoute()
 
 const toast = useToast()
 
@@ -92,7 +93,10 @@ const onSubmit = async () => {
 </script>
 
 <template>
-    <section class="copreci-section copreci-section--gray">
+    <section
+        v-if="!route.path.includes('/sii')"
+        class="copreci-section copreci-section--gray"
+    >
         <UContainer>
             <div class="copreci-text copreci-header">
                 <h3>
