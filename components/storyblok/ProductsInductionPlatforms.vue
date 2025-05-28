@@ -37,7 +37,8 @@ const { state } = useAppStore()
         <div class="mt-20 bg-copreci-500">
             <UContainer class="text-center">
                 <UButton
-                    to="/"
+                    :to="blok.catalogue.filename"
+                    target="_blank"
                     :label="useString(state, 'product_download')"
                     variant="link"
                     size="lg"
