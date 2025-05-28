@@ -27,6 +27,9 @@ onMounted(async () => {
                 <h1 class="fs-40/50 text-copreci-500 font-light">
                     {{ blok.title }}
                 </h1>
+                <p class="text-black/40">
+                    {{ useDateFormat(blok.date, 'DD/MM/YYYY').value }}
+                </p>
             </header>
             <div>
                 <img

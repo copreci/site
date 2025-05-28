@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps({ blok: Object })
 
+const { locale } = useI18n()
 useHead({
     script: [
         {
@@ -33,7 +34,7 @@ useHead({
                 <div
                     id="tc-jswidget"
                     data-client-id="c895916a1c9de7067b5f1c6ecfa0d041"
-                    data-lang="es"
+                    :data-lang="locale ?? 'es'"
                     data-job-listing="1"
                 />
             </div>

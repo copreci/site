@@ -301,9 +301,12 @@ article {
         }
     }
     .copreci_card__content {
-        @apply h-[256px] relative flex flex-col gap-y-4 overflow-hidden max-[641px]:h-auto;
+        @apply h-[270px] relative flex flex-col gap-y-3 overflow-hidden max-[641px]:h-auto;
         h3 {
             @apply fs-13/16 font-medium hover:text-copreci-500;
+        }
+        .copreci_card__content-date {
+            @apply !text-xs !font-normal !text-black/40 mb-4 last:mb-0;
         }
         .copreci_card__content-rich {
             @apply max-[641px]:hidden;
@@ -324,7 +327,7 @@ article {
         }
     }
     .copreci_card__content--sm {
-        @apply h-[145px];
+        @apply h-[155px];
     }
 }
 

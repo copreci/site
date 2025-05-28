@@ -78,6 +78,9 @@ onMounted(async () => {
                                 </NuxtLink>
                             </h3>
                             <div class="copreci_card__content-rich">
+                                <p class="copreci_card__content-date">
+                                    {{ useDateFormat(item.content.date, 'DD/MM/YYYY').value }}
+                                </p>
                                 <StoryblokRichText
                                     :doc="item.content.text_left"
                                 />

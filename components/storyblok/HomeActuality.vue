@@ -11,6 +11,7 @@ const highlights_left = computed(() => {
             text_left: props.blok?.highlights[0]?.content?.text_left,
             text_right: props.blok?.highlights[0]?.content?.text_right,
             to: `/${props.blok?.highlights[0]?.full_slug}`,
+            date: props.blok?.highlights[0]?.content?.date,
         },
     ]
 })
@@ -23,6 +24,7 @@ const highlights_right = computed(() => {
             text_left: props.blok?.highlights[1]?.content?.text_left,
             text_right: props.blok?.highlights[1]?.content?.text_right,
             to: `/${props.blok?.highlights[1]?.full_slug}`,
+            date: props.blok?.highlights[1]?.content?.date,
         },
         {
             title: props.blok?.highlights[2]?.content?.title,
@@ -30,6 +32,7 @@ const highlights_right = computed(() => {
             text_left: props.blok?.highlights[2]?.content?.text_left,
             text_right: props.blok?.highlights[2]?.content?.text_right,
             to: `/${props.blok?.highlights[2]?.full_slug}`,
+            date: props.blok?.highlights[2]?.content?.date,
         },
     ]
 })
@@ -76,6 +79,9 @@ const highlights_right = computed(() => {
                                 </NuxtLink>
                             </h3>
                             <div class="copreci_card__content-rich">
+                                <p class="copreci_card__content-date">
+                                    {{ useDateFormat(item.date, 'DD/MM/YYYY').value }}
+                                </p>
                                 <StoryblokRichText
                                     :doc="item.text_left"
                                 />
@@ -115,6 +121,9 @@ const highlights_right = computed(() => {
                                     </NuxtLink>
                                 </h3>
                                 <div class="copreci_card__content-rich">
+                                    <p class="copreci_card__content-date">
+                                        {{ useDateFormat(item.date, 'DD/MM/YYYY').value }}
+                                    </p>
                                     <StoryblokRichText
                                         :doc="item.text_left"
                                     />
