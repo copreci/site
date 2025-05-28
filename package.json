@@ -8,6 +8,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
     "postinstall": "nuxt prepare",
     "deploy": "pnpm run build && wrangler deploy && wrangler secret bulk .dev.vars",
 		"deploy:no-build": "wrangler deploy && wrangler secret bulk .dev.vars",
