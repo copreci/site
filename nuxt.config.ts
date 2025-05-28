@@ -7,7 +7,6 @@ export default defineNuxtConfig({
         '@nuxt/ui',
         '@pinia/nuxt',
         '@nuxtjs/i18n',
-        'motion-v/nuxt',
         '@vueuse/nuxt',
         '@storyblok/nuxt',
         'v-gsap-nuxt',
