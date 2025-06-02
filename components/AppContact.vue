@@ -223,8 +223,13 @@ const onSubmit = async () => {
                         <UCheckbox
                             v-model="formState.legal"
                             color="neutral"
-                            :label="useString(state, 'form_legal')"
-                        />
+                        >
+                            <template #label>
+                                <StoryblokRichText
+                                    :doc="state.form_legal"
+                                />
+                            </template>
+                        </UCheckbox>
                     </div>
                     <div class="col-span-4 flex items-center justify-end gap-x-2.5 max-[769px]:col-span-12 max-[769px]:justify-start">
                         <UButton

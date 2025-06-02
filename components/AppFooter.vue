@@ -75,7 +75,7 @@ const items = computed(() => {
                         class="mt-4 max-[769px]:mt-0"
                     >
                         <NuxtLink
-                            :to="state.about_page"
+                            :href="`${state.about_page}#where`"
                             class="group flex items-center gap-x-4.5 text-white cursor-pointer"
                         >
                             <span class="fs-13/16">

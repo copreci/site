@@ -11,9 +11,9 @@
     "start": "node .output/server/index.mjs",
     "postinstall": "nuxt prepare",
     "deploy": "pnpm run build && wrangler deploy && wrangler secret bulk .dev.vars",
-		"deploy:no-build": "wrangler deploy && wrangler secret bulk .dev.vars",
-		"deploy:secrets": "wrangler secret bulk .dev.vars",
-		"cf-typegen": "wrangler types"
+    "deploy:no-build": "wrangler deploy && wrangler secret bulk .dev.vars",
+    "deploy:secrets": "wrangler secret bulk .dev.vars",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@nuxt/eslint": "1.3.0",
@@ -29,6 +29,7 @@
     "@vueuse/nuxt": "13.1.0",
     "eslint": "^9.0.0",
     "nuxt": "^3.16.2",
+    "nuxt-anchorscroll": "1.0.5",
     "pinia": "^3.0.2",
     "typescript": "^5.6.3",
     "v-gsap-nuxt": "1.3.20",
@@ -42,9 +43,9 @@
     "embla-carousel-fade": "^8.6.0",
     "embla-carousel-vue": "^8.6.0",
     "embla-carousel-wheel-gestures": "^8.0.2",
-    "resend": "^4.4.1",
-    "zod": "^3.24.3",
     "nitro-cloudflare-dev": "^0.2.2",
-		"wrangler": "^4.12.0"
+    "resend": "^4.4.1",
+    "wrangler": "^4.12.0",
+    "zod": "^3.24.3"
   }
 }

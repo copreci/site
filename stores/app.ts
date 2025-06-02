@@ -6,6 +6,7 @@ export const useAppStore = defineStore('app', () => {
         logo: any
         logo_white: any
         logo_mondragon: any
+        form_legal: any
         menu: any[]
         ssmm: any[]
         legal: any[]
@@ -22,6 +23,7 @@ export const useAppStore = defineStore('app', () => {
         logo: '',
         logo_white: '',
         logo_mondragon: '',
+        form_legal: '',
         menu: [],
         ssmm: [],
         legal: [],

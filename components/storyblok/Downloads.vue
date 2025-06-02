@@ -101,33 +101,6 @@ const data = ref({
                             <div class="copreci-download__block">
                                 <header>
                                     <h4>
-                                        {{ data.quality.politics.title }}
-                                    </h4>
-                                </header>
-                                <ul
-                                    v-if="data.quality.politics.downloads"
-                                    class="copreci-download__downloads"
-                                >
-                                    <li
-                                        v-for="download in data.quality.politics.downloads"
-                                        :key="download._uid"
-                                    >
-                                        <a
-                                            :href="download.filename"
-                                            class="copreci-download__link"
-                                            target="_blank"
-                                        >
-                                            <img :src="blok.icon.filename">
-                                            <span>{{ useFilename(download) }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-span-4 copreci-download__col">
-                            <div class="copreci-download__block">
-                                <header>
-                                    <h4>
                                         {{ data.quality.product.title }}
                                     </h4>
                                 </header>
@@ -448,6 +421,33 @@ const data = ref({
                                 >
                                     <li
                                         v-for="download in data.corporative.projects.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.quality.politics.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.quality.politics.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.quality.politics.downloads"
                                         :key="download._uid"
                                     >
                                         <a

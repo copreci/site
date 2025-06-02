@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         '@storyblok/nuxt',
         'v-gsap-nuxt',
         '@nuxt/scripts',
+        'nuxt-anchorscroll',
     ],
     components: {
         dirs: [

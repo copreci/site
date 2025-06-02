@@ -31,6 +31,7 @@ if (app.value) {
     state.talent_page = `/${app.value.content.talent_page.story.full_slug}`
     state.actuality_page = `/${app.value.content.actuality_page.story.full_slug}`
     state.products_page = `/${app.value.content.products_page.story.full_slug}`
+    state.form_legal = app.value.content.form_legal
     state.seo = app.value.content.seo[0]
 }
 

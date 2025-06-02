@@ -49,6 +49,7 @@ watch(() => active.value, () => {
 <template>
     <section
         v-if="blok"
+        id="where"
         class="relative copreci-section copreci-section--gray"
     >
         <UContainer>

@@ -40,6 +40,23 @@ if (story.value) {
     }
 }
 
+const { scrollToAnchor } = useAnchorScroll({
+    toAnchor: {
+        scrollOptions: {
+            behavior: 'smooth',
+            offsetTop: -75,
+        },
+    },
+})
+
+if (useRoute().hash) {
+    setTimeout(() => {
+        const id = useRoute().hash.replace('#', '')
+        console.log(id)
+        scrollToAnchor(id)
+    }, 100)
+}
+
 const alternateUrls = computed(() => {
     const urls: any[] = []
     urls.push({
