@@ -14,6 +14,9 @@ const schema = z.object({
     phone: z.string().min(1),
     country: z.string().min(1),
     region: z.string().min(1),
+    legal: z.boolean().refine((val) => val === true, {
+        message: 'Debes aceptar los términos y condiciones',
+    }),
 })
 
 const formState = reactive({
@@ -65,7 +68,7 @@ const onCancel = () => {
 const onSubmit = async () => {
     loading.value = true
 
-    const { data } = await useFetch('/api/mail', {
+    const { data, error } = await useFetch('/api/mail', {
         method: 'POST',
         body: JSON.stringify(formState),
     })
@@ -73,21 +76,20 @@ const onSubmit = async () => {
     loading.value = false
 
     if (data.value) {
-        if (data.value.data) {
-            toast.add({
-                title: useString(state, 'form_success'),
-                icon: 'i-heroicons-check-circle',
-                color: 'success',
-            })
-            onReset()
-        }
-        else {
-            toast.add({
-                title: useString(state, 'form_error'),
-                icon: 'i-heroicons-exclamation-circle',
-                color: 'error',
-            })
-        }
+        toast.add({
+            title: useString(state, 'form_success'),
+            icon: 'i-heroicons-check-circle',
+            color: 'success',
+        })
+        onReset()
+    }
+
+    if (error.value) {
+        toast.add({
+            title: useString(state, 'form_error'),
+            icon: 'i-heroicons-exclamation-circle',
+            color: 'error',
+        })
     }
 }
 </script>
@@ -220,16 +222,21 @@ const onSubmit = async () => {
                         </UFormField>
                     </div>
                     <div class="col-span-8 max-[769px]:col-span-12 max-[641px]:col-span-12">
-                        <UCheckbox
-                            v-model="formState.legal"
-                            color="neutral"
+                        <UFormField
+                            name="legal"
+                            :ui="{ error: 'block' }"
                         >
-                            <template #label>
-                                <StoryblokRichText
-                                    :doc="state.form_legal"
-                                />
-                            </template>
-                        </UCheckbox>
+                            <UCheckbox
+                                v-model="formState.legal"
+                                :variant="formState.legal ? 'neutral' : 'error'"
+                            >
+                                <template #label>
+                                    <StoryblokRichText
+                                        :doc="state.form_legal"
+                                    />
+                                </template>
+                            </UCheckbox>
+                        </UFormField>
                     </div>
                     <div class="col-span-4 flex items-center justify-end gap-x-2.5 max-[769px]:col-span-12 max-[769px]:justify-start">
                         <UButton

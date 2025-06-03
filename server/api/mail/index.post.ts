@@ -1,32 +1,34 @@
 import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
-    const { resendApiKey } = useRuntimeConfig(event)
-    const resend = new Resend(resendApiKey)
+    const config = useRuntimeConfig()
 
-    const body = await readBody(event)
+    const resend = new Resend(config.public.resendApiKey)
+
+    const {
+        name, email, phone, company, country, region, message, customer, supplier } = await readBody(event)
 
     try {
         const data = await resend.emails.send({
-            from: body.address,
-            to: body.address,
-            subject: 'Copreci Web (Formulario de contacto)',
-            html: `<p>Nombre: ${body.name}</p>
-            <p>Apellidos: ${body.surname}</p>
-            <p>Email: ${body.email}</p>
-            <p>Teléfono: ${body.phone}</p>
-            <p>Empresa: ${body.company}</p>
-            <p>País: ${body.country}</p>
-            <p>Región: ${body.region}</p>
-            <p>Mensaje: ${body.message}</p>`,
+            from: 'Copreci (copreci.com) <home@copreci.com>',
+            to: ['home@copreci.com'],
+            subject: 'Formulario de contacto (copreci.com)',
+            html: `
+            <p><strong>Nombre:</strong> ${name ? name : '-'}</p>
+            <p><strong>Email:</strong> ${email ? email : '-'}</p>
+            <p><strong>Teléfono:</strong> ${phone ? phone : '-'}</p>
+            <p><strong>Empresa:</strong> ${company ? company : '-'}</p>
+            <p><strong>País:</strong> ${country ? country : '-'}</p>
+            <p><strong>Región:</strong> ${region ? region : '-'}</p>
+            <p><strong>Mensaje:</strong> ${message ? message : '-'}</p>
+            <p><strong>Cliente:</strong> ${customer == 'yes' ? 'Sí' : 'No'}</p>
+            <p><strong>Proveedor:</strong> ${supplier == 'yes' ? 'Sí' : 'No'}</p>
+            `,
         })
 
         return data
     }
-    catch (error: any) {
-        throw createError({
-            statusCode: error.code,
-            statusMessage: error.message,
-        })
+    catch (error) {
+        return { error }
     }
 })

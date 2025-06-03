@@ -35,10 +35,11 @@ export default defineNuxtConfig({
         public: {
             storyblokAccessToken: '',
             resendApiKey: '',
+            mailgunApiKey: '',
         },
     },
     compatibilityDate: '2025-04-02',
-    /* nitro: {
+    /*  nitro: {
         preset: 'cloudflare_module',
         cloudflare: {
             deployConfig: true,
