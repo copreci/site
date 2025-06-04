@@ -17,6 +17,10 @@ const data = ref({
             title: props.blok?.quality_iso_14001_title,
             downloads: props.blok?.quality_iso_14001_files,
         },
+        iso45001: {
+            title: props.blok?.quality_iso_45001_title,
+            downloads: props.blok?.quality_iso_45001_files,
+        },
         eu: {
             title: props.blok?.quality_eu_title,
             downloads: props.blok?.quality_eu_files,
@@ -271,6 +275,33 @@ const data = ref({
                                 >
                                     <li
                                         v-for="download in data.quality.iso14001.downloads"
+                                        :key="download._uid"
+                                    >
+                                        <a
+                                            :href="download.filename"
+                                            class="copreci-download__link"
+                                            target="_blank"
+                                        >
+                                            <img :src="blok.icon.filename">
+                                            <span>{{ useFilename(download) }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-span-4 copreci-download__col">
+                            <div class="copreci-download__block">
+                                <header>
+                                    <h4>
+                                        {{ data.quality.iso45001.title }}
+                                    </h4>
+                                </header>
+                                <ul
+                                    v-if="data.quality.iso45001.downloads"
+                                    class="copreci-download__downloads"
+                                >
+                                    <li
+                                        v-for="download in data.quality.iso45001.downloads"
                                         :key="download._uid"
                                     >
                                         <a
