@@ -32,11 +32,8 @@ export default defineNuxtConfig({
         colorMode: false,
     },
     runtimeConfig: {
-        public: {
-            storyblokAccessToken: '',
-            resendApiKey: '',
-            mailgunApiKey: '',
-        },
+        storyblokAccessToken: '',
+        resendApiKey: '',
     },
     compatibilityDate: '2025-04-02',
     /*  nitro: {
@@ -90,7 +87,7 @@ export default defineNuxtConfig({
         },
     },
     storyblok: {
-        accessToken: import.meta.env.NUXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
+        accessToken: process.env.NUXT_STORYBLOK_ACCESS_TOKEN,
         apiOptions: { cache: { type: 'memory', clear: 'auto' } },
         componentsDir: '~/components',
     },
