@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
 
     const data = await resend.emails.send({
         from: 'Copreci (copreci.com) <home@copreci.com>',
-        to: ['home@copreci.com', 'adriaalos@gmail.com'],
+        to: ['home@copreci.com'],
         subject: 'Formulario de contacto (copreci.com)',
         html: `
             <p><strong>Nombre:</strong> ${name ? name : '-'}</p>
